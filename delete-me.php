@@ -1,5 +1,5 @@
 <!doctype html>
 <html>
 <head></head>  
-<body>Just a test</body>  
+<body><?php echo 'Just a test'; ?></body>  
 </html>

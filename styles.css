@@ -273,7 +273,7 @@ li {
 
 .content ol li {
 	margin:15px 0; padding:0;
-	background:none;
+	/*background:none;*/
 }
 
 .content ol li ul li {

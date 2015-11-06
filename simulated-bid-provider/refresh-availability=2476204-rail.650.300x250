@@ -1,0 +1,2 @@
+bidProviderOne.setAvailable("2476204-rail.650.300x250");
+bidProviderOne.resume();

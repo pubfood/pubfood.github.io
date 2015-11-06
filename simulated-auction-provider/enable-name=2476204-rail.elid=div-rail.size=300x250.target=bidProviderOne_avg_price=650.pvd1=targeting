@@ -1,0 +1,2 @@
+auctionProviderOne.fillSlot("div-rail",[300,250],"<div style=\x22width: 258px; height: 248px;border:solid 1px #aaa;padding:0 20px\x22><h3><div style=\x22color:#666\x22>name</div><code>2476204-rail</code></h3><h4><div style=\x22color:#666\x22>elementId</div><code>div-rail</code></h4><p><div style=\x22color:#666\x22>sizes</div><code>[[300,250]]</code></p><p><div style=\x22color:#666\x22>targeting</div><code>bidProviderOne_avg_price=650&amp;pvd1=targeting</code></p></div>");
+auctionProviderOne.resume();

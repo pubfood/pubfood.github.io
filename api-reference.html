@@ -61,10 +61,3481 @@
 <div class="row">
 <div class="col-sm-4 col-sm-push-8">
 <div id="accordion-sub-menu">
+<h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="#pubfood">pubfood</a></li><li><a href="#pubfood-PubfoodError">PubfoodError</a></li><li><a href="#pubfood-PubfoodEvent">PubfoodEvent</a></li><li><a href="#pubfood-assembler-BidAssembler">BidAssembler</a></li><li><a href="#pubfood-assembler-RequestAssembler">RequestAssembler</a></li><li><a href="#pubfood-assembler-TransformOperator">TransformOperator</a></li><li><a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a></li><li><a href="#pubfood-model-Bid">Bid</a></li><li><a href="#pubfood-model-Slot">Slot</a></li><li><a href="#pubfood-provider-AuctionProvider">AuctionProvider</a></li><li><a href="#pubfood-provider-BidProvider">BidProvider</a></li></ul><h3>Events</h3><ul><li><a href="#pubfood-PubfoodEvent-AUCTION_COMPLETE">AUCTION_COMPLETE</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_GO">AUCTION_GO</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_LIB_LOADED">AUCTION_LIB_LOADED</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_LIB_START">AUCTION_LIB_START</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_POST_RUN">AUCTION_POST_RUN</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_REFRESH">AUCTION_REFRESH</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_TRIGGER">AUCTION_TRIGGER</a></li><li><a href="#pubfood-PubfoodEvent-BID_ASSEMBLER">BID_ASSEMBLER</a></li><li><a href="#pubfood-PubfoodEvent-BID_COMPLETE">BID_COMPLETE</a></li><li><a href="#pubfood-PubfoodEvent-BID_LIB_LOADED">BID_LIB_LOADED</a></li><li><a href="#pubfood-PubfoodEvent-BID_LIB_START">BID_LIB_START</a></li><li><a href="#pubfood-PubfoodEvent-BID_PUSH_NEXT">BID_PUSH_NEXT</a></li><li><a href="#pubfood-PubfoodEvent-BID_START">BID_START</a></li><li><a href="#pubfood-PubfoodEvent-ERROR">ERROR</a></li><li><a href="#pubfood-PubfoodEvent-INVALID">INVALID</a></li><li><a href="#pubfood-PubfoodEvent-PUBFOOD_API_LOAD">PUBFOOD_API_LOAD</a></li><li><a href="#pubfood-PubfoodEvent-PUBFOOD_API_START">PUBFOOD_API_START</a></li><li><a href="#pubfood-PubfoodEvent-WARN">WARN</a></li></ul><h3>Namespaces</h3><ul><li><a href="#util">util</a></li></ul>
 </div><!-- end #accordion-sub-menu -->
 </div>
 <div class="col-sm-8 col-sm-pull-4">
-<h3>Coming Soon</h3>
+<section id="class-global-pubfood">
+<header id="pubfood">
+<h2>
+        pubfood
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood"><span class="type-signature"></span>new pubfood<span class="signature">(config<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Creates a new Pubfood Bidding instance
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>config</code></td>
+<td class="type">
+<span class="param-type"><a href="#PubfoodConfig">PubfoodConfig</a></span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">Optional configuration</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Classes (2)</h3>
+<dl>
+              <dt><a href="#pubfood-PubfoodError">PubfoodError</a></dt>
+              <dd></dd>
+<dt><a href="#pubfood-PubfoodEvent">PubfoodEvent</a></dt>
+              <dd></dd>
+          </dl>
+        </div>
+<div class="subsection">
+          <h3 class="subsection-title">Members (1)</h3>
+<div class="members">
+  <h4 class="name" id="pubfood-logger"><span class="type-signature">(static) </span>logger<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>history</code></td>
+<td class="type">
+<span class="param-type">array</span>
+</td>
+<td class="description last">Store the logs</td>
+        </tr>
+<tr>
+<td class="name"><code>dumpLog</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last">console.logs the history</td>
+        </tr>
+<tr>
+<td class="name"><code>logCall</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last">Logs every time a given function is called
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The function name</td>
+        </tr>
+<tr>
+<td class="name"><code>args</code></td>
+<td class="type">
+<span class="param-type">array</span>
+</td>
+<td class="description last">The function arguments</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>logEvent</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last">Logs every time a given event is emitted
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The event name</td>
+        </tr>
+<tr>
+<td class="name"><code>args</code></td>
+<td class="type">
+<span class="param-type">array</span>
+</td>
+<td class="description last">The event arguments</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (14)</h3>
+<h4 class="name foo" id="pubfood-addBidProvider"><span class="type-signature"></span>addBidProvider<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Add a BidProvider
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#BidDelegate">BidDelegate</a></span>
+</td>
+<td class="description last">Bid provider configuaration</td>
+        </tr>
+</tbody>
+</table>
+<h5>Example</h5>
+<pre class="prettyprint"><code>var p = new pubfood();
+p.addBidProvider({
+  name: 'BidProvider1',
+  libUrl: '',
+  init: function(slots, pushBid, done) {
+  },
+  refresh: function(slots, pushBid, done) {
+  }
+});
+</code></pre>
+<h4 class="name foo" id="pubfood-addBidTransform"><span class="type-signature"></span>addBidTransform<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Add bid transformation operator.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformDelegate">TransformDelegate</a></span>
+</td>
+<td class="description last">the delegate function</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-addRequestTransform"><span class="type-signature"></span>addRequestTransform<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Add request transformation operator.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformDelegate">TransformDelegate</a></span>
+</td>
+<td class="description last">the delegate function</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-addSlot"><span class="type-signature"></span>addSlot<span class="signature">(slot)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Make this adslot avaialble for bidding
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slot</code></td>
+<td class="type">
+<span class="param-type"><a href="#SlotConfig">SlotConfig</a></span>
+</td>
+<td class="description last">Slot configuration</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-dumpLog"><span class="type-signature"></span>dumpLog<span class="signature">(type)</span><span class="type-signature"></span></h4>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>type</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-getAuctionProvider"><span class="type-signature"></span>getAuctionProvider<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="#pubfood-provider-AuctionProvider">AuctionProvider</a>}</span></h4>
+<div class="description">
+    Get the Auction Provider
+</div>
+<h4 class="name foo" id="pubfood-getBidProviders"><span class="type-signature"></span>getBidProviders<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+<div class="description">
+    Gets a list of bidproviders
+</div>
+<h4 class="name foo" id="pubfood-getSlots"><span class="type-signature"></span>getSlots<span class="signature">()</span><span class="type-signature"> &rarr; {MediatorSlot}</span></h4>
+<div class="description">
+    Get a list a of all registered slots
+</div>
+<h4 class="name foo" id="pubfood-observe"><span class="type-signature"></span>observe<span class="signature">(eventType<span class="signature-attributes">opt</span>, reporter)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Add a custom reporter
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>eventType</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">the event to bind this reporter to</td>
+        </tr>
+<tr>
+<td class="name"><code>reporter</code></td>
+<td class="type">
+<span class="param-type"><a href="#Reporter">Reporter</a></span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">Custom reporter</td>
+        </tr>
+</tbody>
+</table>
+<h5>Example</h5>
+<pre class="prettyprint"><code>var p = new pubfood();
+var reporter = function(event){
+  console.log('my reporter', event.data);
+};
+p.observe(reporter);
+</code></pre>
+<h4 class="name foo" id="pubfood-refresh"><span class="type-signature"></span>refresh<span class="signature">(slotNames<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Refresh slot bids.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slotNames</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;string&gt;</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">Optional list of slot names to refresh.</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-setAuctionProvider"><span class="type-signature"></span>setAuctionProvider<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Set the Auction Provider
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#AuctionDelegate">AuctionDelegate</a></span>
+</td>
+<td class="description last">Auction provider configuration</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-setAuctionTrigger"><span class="type-signature"></span>setAuctionTrigger<span class="signature">(delegate)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Sets a function delegate to initiate publisher the ad server request.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#AuctionTriggerFn">AuctionTriggerFn</a></span>
+</td>
+<td class="description last">the function that makes the callback to start the auction</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-start"><span class="type-signature"></span>start<span class="signature">(startTimestamp<span class="signature-attributes">opt</span>, startCb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Start the bidding process
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>startTimestamp</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">An optional timestamp that's used for calculating other time deltas.</td>
+        </tr>
+<tr>
+<td class="name"><code>startCb</code></td>
+<td class="type">
+<span class="param-type"><a href="#apiStartCallback">apiStartCallback</a></span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-timeout"><span class="type-signature"></span>timeout<span class="signature">(millis)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Sets the time in which bid providers must supply bids.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>millis</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">milliseconds to set the timeout</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood.PubfoodError">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-PubfoodError">
+<h2>
+        PubfoodError
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-PubfoodError"><span class="type-signature"></span>new PubfoodError<span class="signature">(message)</span><span class="type-signature"> &rarr; {<a href="#pubfood-PubfoodError">pubfood.PubfoodError</a>}</span></h4>
+<div class="description">
+    Pubfood Error
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>message</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">the error description</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Members (2)</h3>
+<div class="members">
+  <h4 class="name" id="pubfood-PubfoodError-message"><span class="type-signature"></span>message<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>message</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The error message</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="pubfood-PubfoodError-stack"><span class="type-signature"></span>stack<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>stack</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The error stack trace</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood.PubfoodEvent">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-PubfoodEvent">
+<h2>
+        PubfoodEvent
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-PubfoodEvent"><span class="type-signature"></span>new PubfoodEvent<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="#pubfood-PubfoodEvent">pubfood.PubfoodEvent</a>}</span></h4>
+<div class="description">
+    Pubfood event class
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Members (1)</h3>
+<div class="members">
+  <h4 class="name" id="pubfood-PubfoodEvent-EVENT_TYPE"><span class="type-signature"></span>EVENT_TYPE<span class="type-signature"> :object</span></h4>
+<div class="description">
+      Available event types
+  </div>
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (7)</h3>
+<h4 class="name foo" id="pubfood-PubfoodEvent-emit"><span class="type-signature">(static) </span>emit<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Emit an event to all registered event listeners.
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://github.com/primus/eventemitter3">https://github.com/primus/eventemitter3</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="pubfood-PubfoodEvent-listeners"><span class="type-signature">(static) </span>listeners<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Return a list of assigned event listeners.
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://github.com/primus/eventemitter3">https://github.com/primus/eventemitter3</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="pubfood-PubfoodEvent-on"><span class="type-signature">(static) </span>on<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Register a new EventListener for the given event.
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://github.com/primus/eventemitter3">https://github.com/primus/eventemitter3</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="pubfood-PubfoodEvent-once"><span class="type-signature">(static) </span>once<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Add an EventListener that's only called once.
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://github.com/primus/eventemitter3">https://github.com/primus/eventemitter3</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="pubfood-PubfoodEvent-removeAllListeners"><span class="type-signature">(static) </span>removeAllListeners<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Remove all listeners or only the listeners for the specified event.
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://github.com/primus/eventemitter3">https://github.com/primus/eventemitter3</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="pubfood-PubfoodEvent-removeListener"><span class="type-signature">(static) </span>removeListener<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Remove event listeners.
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://github.com/primus/eventemitter3">https://github.com/primus/eventemitter3</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="pubfood-PubfoodEvent-publish"><span class="type-signature"></span>publish<span class="signature">(eventType, data, eventContext)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    publish an event
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>eventType</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The event type</td>
+        </tr>
+<tr>
+<td class="name"><code>data</code></td>
+<td class="type">
+<span class="param-type">*</span>
+</td>
+<td class="description last">the event data</td>
+        </tr>
+<tr>
+<td class="name"><code>eventContext</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The type of provider. ex: <i>bid</i>, <i>auction</i></td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+        <h3 class="subsection-title">Type Definitions</h3>
+<div class="members">
+  <h4 class="name" id="pubfood-PubfoodEvent-EventStructure">EventStructure</h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>ts</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The timestamp of the event</td>
+        </tr>
+<tr>
+<td class="name"><code>type</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The event type</td>
+        </tr>
+<tr>
+<td class="name"><code>provider</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The type of provider. Defaults to <i>pubfood</i></td>
+        </tr>
+<tr>
+<td class="name"><code>data</code></td>
+<td class="type">
+<span class="param-type">object</span>
+|
+
+<span class="param-type">string</span>
+</td>
+<td class="description last">Data structure for each event type
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>PUBFOOD_API_LOAD</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>PUBFOOD_API_START</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>ERROR</code></td>
+<td class="type">
+<span class="param-type"><a href="#pubfood-PubfoodError">PubfoodError</a></span>
+</td>
+<td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>stackTrace</code></td>
+<td class="type">
+<span class="param-type">*</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>WARN</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">warning message</td>
+        </tr>
+<tr>
+<td class="name"><code>INVALID</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">validation message</td>
+        </tr>
+<tr>
+<td class="name"><code>AUCTION_LIB_START</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>auctionProvider</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>AUCTION_LIB_LOADED</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>auctionProvider</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>AUCTION_GO</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>AUCTION_TRIGGER</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>AUCTION_REFRESH</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>AUCTION_COMPLETE</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>AUCTION_POST_RUN</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>BID_LIB_START</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>BID_LIB_LOADED</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>BID_PUSH_NEXT</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">@see <a href="#pubfood-model-Bid">Bid</a>
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>id</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>sizes</code></td>
+<td class="type">
+<span class="param-type">array.&lt;number, number&gt;</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>value</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>targetting</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>BID_START</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>BID_COMPLETE</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>BID_ASSEMBLER</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Events</h3>
+<h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_COMPLETE">AUCTION_COMPLETE</h4>
+<div class="description">
+    The auction has completed
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_GO">AUCTION_GO</h4>
+<div class="description">
+    Start the publisher auction
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_LIB_LOADED">AUCTION_LIB_LOADED</h4>
+<div class="description">
+    Auction provider library loaded
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_LIB_START">AUCTION_LIB_START</h4>
+<div class="description">
+    Auction provider library load started
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_POST_RUN">AUCTION_POST_RUN</h4>
+<div class="description">
+    The auction has finished running
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_REFRESH">AUCTION_REFRESH</h4>
+<div class="description">
+    The auction was restarted
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_TRIGGER">AUCTION_TRIGGER</h4>
+<div class="description">
+    Start the publisher auction from a business rule.
+e.g. a bidder timeout
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-BID_ASSEMBLER">BID_ASSEMBLER</h4>
+<div class="description">
+    Start bid assembler
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-BID_COMPLETE">BID_COMPLETE</h4>
+<div class="description">
+    Action is complete
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-BID_LIB_LOADED">BID_LIB_LOADED</h4>
+<div class="description">
+    Bid provider library loaded
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-BID_LIB_START">BID_LIB_START</h4>
+<div class="description">
+    Bid provider library load started
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-BID_PUSH_NEXT">BID_PUSH_NEXT</h4>
+<div class="description">
+    Next item in data stream ready.<br>
+ e.g BidProvider.refresh raises
+ a BID_PUSH_NEXT event for each bid.
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-BID_START">BID_START</h4>
+<div class="description">
+    Action started.<br>e.g BidProvider.init
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-ERROR">ERROR</h4>
+<div class="description">
+    Error event raised
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-INVALID">INVALID</h4>
+<div class="description">
+    Invalid operation or data event raise
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-PUBFOOD_API_LOAD">PUBFOOD_API_LOAD</h4>
+<div class="description">
+    Api library load
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-PUBFOOD_API_START">PUBFOOD_API_START</h4>
+<div class="description">
+    Api library start
+</div>
+<h4 class="name foo" id="pubfood-PubfoodEvent-WARN">WARN</h4>
+<div class="description">
+    Warn event raised
+</div>
+</div>
+    
+</article>
+
+</section>
+<section id="class-static-pubfood#assembler.BidAssembler">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-assembler-BidAssembler">
+<h2>
+        BidAssembler
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-assembler-BidAssembler"><span class="type-signature"></span>new BidAssembler<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Builds the set of <a href="#pubfood-model-Bid">Bids</a> for a
+publisher ad server request <a href="#pubfood-provider-AuctionProvider">AuctionProvider</a>.
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (2)</h3>
+<h4 class="name foo" id="pubfood-assembler-BidAssembler-addOperator"><span class="type-signature"></span>addOperator<span class="signature">(operator)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Add a transform operator to the assembler processing pipeline.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>operator</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformOperator">TransformOperator</a></span>
+</td>
+<td class="description last">function to transfomr bids</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-assembler-BidAssembler-process"><span class="type-signature"></span>process<span class="signature">(bids)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="#pubfood-model-Bid">Bid</a>&gt;}</span></h4>
+<div class="description">
+    Process bids.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>bids</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Bid">Bid</a>&gt;</span>
+</td>
+<td class="description last">bids to process.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood#assembler.RequestAssembler">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-assembler-RequestAssembler">
+<h2>
+        RequestAssembler
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-assembler-RequestAssembler"><span class="type-signature"></span>new RequestAssembler<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Builds the set of <a href="#pubfood-model-Slot">Slot</a> for a
+publisher ad server request <a href="#pubfood-provider-AuctionProvider">AuctionProvider</a>.
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (2)</h3>
+<h4 class="name foo" id="pubfood-assembler-RequestAssembler-addOperator"><span class="type-signature"></span>addOperator<span class="signature">(operator)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Add a transform operator to the assembler processing pipeline.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>operator</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformOperator">TransformOperator</a></span>
+</td>
+<td class="description last">function to transfomr bids</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-assembler-RequestAssembler-process"><span class="type-signature"></span>process<span class="signature">(slots)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="#pubfood-model-Slot">Slot</a>&gt;}</span></h4>
+<div class="description">
+    Process bids.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slots</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Slot">Slot</a>&gt;</span>
+</td>
+<td class="description last">bids to process.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood#assembler.TransformOperator">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-assembler-TransformOperator">
+<h2>
+        TransformOperator
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-assembler-TransformOperator"><span class="type-signature"></span>new TransformOperator<span class="signature">(delegate)</span><span class="type-signature"></span></h4>
+<div class="description">
+    TransformOperator processes input bids and outputs rusult bids.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformDelegate">TransformDelegate</a></span>
+</td>
+<td class="description last">function to transform input bids</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (4)</h3>
+<h4 class="name foo" id="pubfood-assembler-TransformOperator-validate"><span class="type-signature">(static) </span>validate<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    Validate the operator delegate.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformDelegate">TransformDelegate</a></span>
+</td>
+<td class="description last">the operator delegate function</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-assembler-TransformOperator-withDelegate"><span class="type-signature">(static) </span>withDelegate<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    Create a new TransformOperator with delegate.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformDelegate">TransformDelegate</a></span>
+</td>
+<td class="description last">transform object</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-assembler-TransformOperator-process"><span class="type-signature"></span>process<span class="signature">(bids, params)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="#pubfood-model-Bid">Bid</a>&gt;}</span></h4>
+<div class="description">
+    Process bids.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>bids</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#BidObject">BidObject</a>&gt;</span>
+</td>
+<td class="description last">bids to process.</td>
+        </tr>
+<tr>
+<td class="name"><code>params</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">parameters as required by delegate function</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-assembler-TransformOperator-setName"><span class="type-signature"></span>setName<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="#TransformOperator">TransformOperator</a>}</span></h4>
+<div class="description">
+    Set the operator name.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">the name of the operator</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood#mediator.AuctionMediator">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-mediator-AuctionMediator">
+<h2>
+        AuctionMediator
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator"><span class="type-signature"></span>new AuctionMediator<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    AuctionMediator coordiates requests to Publisher Ad Servers.
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Members (1)</h3>
+<div class="members">
+  <h4 class="name" id="pubfood-mediator-AuctionMediator-prefix"><span class="type-signature"></span>prefix<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>prefix</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="description last">if false, do not add bid provider name to bid targeting key. Default: true</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (17)</h3>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-addBidProvider"><span class="type-signature"></span>addBidProvider<span class="signature">(delegateConfig)</span><span class="type-signature"> &rarr; {<a href="#pubfood-provider-BidProvider">BidProvider</a>}</span></h4>
+<div class="description">
+    Add a <a href="#pubfood-provider-BidProvider">BidProvider</a> configuration object.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegateConfig</code></td>
+<td class="type">
+<span class="param-type"><a href="#BidDelegate">BidDelegate</a></span>
+</td>
+<td class="description last">configuration for a <a href="#pubfood-provider-BidProvider">BidProvider</a></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-addBidTransform"><span class="type-signature"></span>addBidTransform<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Adds a function to transform provider bid results.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformDelegate">TransformDelegate</a></span>
+</td>
+<td class="description last">the transformation delegate function</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-addRequestTransform"><span class="type-signature"></span>addRequestTransform<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Adds a function to transform provider bid request parameters, before auction provider request
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#TransformDelegate">TransformDelegate</a></span>
+</td>
+<td class="description last">the transformation delegate function</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-addSlot"><span class="type-signature"></span>addSlot<span class="signature">(slotConfig)</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Add a <a href="#pubfood-model-Slot">Slot</a> to <a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a> config.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slotConfig</code></td>
+<td class="type">
+<span class="param-type"><a href="#SlotConfig">SlotConfig</a></span>
+</td>
+<td class="description last">configuration for a <a href="#pubfood-model-Slot">Slot</a></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-auctionDone"><span class="type-signature"></span>auctionDone<span class="signature">(data)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Notification of auction complete
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>data</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The auction mediator's name</td>
+        </tr>
+</tbody>
+</table>
+<h5>Fires:</h5>
+<ul>
+    <li><a href="#pubfood-PubfoodEvent-event-AUCTION-COMPLETE">pubfood.PubfoodEvent.event:AUCTION_COMPLETE</a></li>
+</ul>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-getBidderSlots"><span class="type-signature"></span>getBidderSlots<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;BidderSlots&gt;}</span></h4>
+<div class="description">
+    Construct a set of slots for bidders.
+</div>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-getTimeout"><span class="type-signature"></span>getTimeout<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
+<div class="description">
+    Gets the time in which bid providers must supply bids.
+</div>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-init"><span class="type-signature"></span>init<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Initialize the auction
+</div>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-loadProviders"><span class="type-signature"></span>loadProviders<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Load bid provider JavaScript library/tag.
+</div>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-refresh"><span class="type-signature"></span>refresh<span class="signature">(slotNames)</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Refresh bids for listed slot names.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slotNames</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;string&gt;</span>
+</td>
+<td class="description last">slots to refresh</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-setAuctionProvider"><span class="type-signature"></span>setAuctionProvider<span class="signature">(delegateConfig)</span><span class="type-signature"> &rarr; {null|<a href="#pubfood-provider-AuctionProvider">AuctionProvider</a>}</span></h4>
+<div class="description">
+    Add a <a href="#pubfood-provider-AuctionProvider">AuctionProvider</a> configuration object.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegateConfig</code></td>
+<td class="type">
+<span class="param-type"><a href="#AuctionDelegate">AuctionDelegate</a></span>
+</td>
+<td class="description last">configuration for a <a href="#pubfood-provider-AuctionProvider">AuctionProvider</a></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-setAuctionProviderCbTimeout"><span class="type-signature"></span>setAuctionProviderCbTimeout<span class="signature">(millis)</span><span class="type-signature"></span></h4>
+<div class="description">
+    The maximum time the auction provider has before calling `done` inside the `init` method
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>millis</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">timeout in milliseconds</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-setAuctionTrigger"><span class="type-signature"></span>setAuctionTrigger<span class="signature">(event)</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Force auction provider to init.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>event</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-setBidProviderCbTimeout"><span class="type-signature"></span>setBidProviderCbTimeout<span class="signature">(millis)</span><span class="type-signature"></span></h4>
+<div class="description">
+    The maximum time the bid provider has before calling `done` inside the `init` method
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>millis</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">timeout in milliseconds</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-start"><span class="type-signature"></span>start<span class="signature">(randomizeBidRequests)</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Start auction bidding.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>randomizeBidRequests</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-timeout"><span class="type-signature"></span>timeout<span class="signature">(millis)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Sets the time in which bid providers must supply bids.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>millis</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">milliseconds to set the timeout</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-mediator-AuctionMediator-validate"><span class="type-signature"></span>validate<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a>}</span></h4>
+<div class="description">
+    Validate provider and slot dependencies.
+</div>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood#model.Bid">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-model-Bid">
+<h2>
+        Bid
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-model-Bid"><span class="type-signature"></span>new Bid<span class="signature">(slot, value, sizes)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Bid is the result of a partner BidProvider request.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slot</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">the slot name</td>
+        </tr>
+<tr>
+<td class="name"><code>value</code></td>
+<td class="type">
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+</td>
+<td class="description last">the bid value</td>
+        </tr>
+<tr>
+<td class="name"><code>sizes</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;number, number&gt;</span>
+</td>
+<td class="description last">the dimension sizes of the slot bid</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Members (3)</h3>
+<div class="members">
+  <h4 class="name" id="pubfood-model-Bid-label"><span class="type-signature"></span>label<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>label</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">optional label for adserver key targeting for bid value e.g. <label>=2.00</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="pubfood-model-Bid-provider"><span class="type-signature"></span>provider<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>provider</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">the bid provider name</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="pubfood-model-Bid-type"><span class="type-signature"></span>type<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>type</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">bid value type derived from <a href="#util-asType">util.asType</a></td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (4)</h3>
+<h4 class="name foo" id="pubfood-model-Bid-fromObject"><span class="type-signature">(static) </span>fromObject<span class="signature">(config)</span><span class="type-signature"> &rarr; {<a href="#pubfood-model-Bid">Bid</a>|null}</span></h4>
+<div class="description">
+    Create a new <a href="#pubfood-model-Bid">Bid</a> from an object.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>config</code></td>
+<td class="type">
+<span class="param-type"><a href="#BidObject">BidObject</a></span>
+</td>
+<td class="description last">bid object literal</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-model-Bid-validate"><span class="type-signature">(static) </span>validate<span class="signature">(config)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    Validate the bid config
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>config</code></td>
+<td class="type">
+<span class="param-type"><a href="#BidObject">BidObject</a></span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-model-Bid-addSize"><span class="type-signature"></span>addSize<span class="signature">(w, h)</span><span class="type-signature"> &rarr; {<a href="#pubfood-model-Bid">Bid</a>}</span></h4>
+<div class="description">
+    Sets the bid's slot size
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>w</code></td>
+<td class="type">
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>h</code></td>
+<td class="type">
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+<dl class="details">
+    <dt class="tag-todo">To Do:</dt>
+    <dd class="tag-todo">
+      <ul>
+        <li>maybe combine with Bid.prototype.dimensions</li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="pubfood-model-Bid-setValue"><span class="type-signature"></span>setValue<span class="signature">(v)</span><span class="type-signature"> &rarr; {<a href="#pubfood-model-Bid">Bid</a>}</span></h4>
+<div class="description">
+    Sets the bid's value
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>v</code></td>
+<td class="type">
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood#model.Slot">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-model-Slot">
+<h2>
+        Slot
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-model-Slot"><span class="type-signature"></span>new Slot<span class="signature">(name, elementId)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Slot contains a definition of a publisher ad unit.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">the slot name</td>
+        </tr>
+<tr>
+<td class="name"><code>elementId</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">target DOM element id for the slot</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (5)</h3>
+<h4 class="name foo" id="pubfood-model-Slot-fromObject"><span class="type-signature">(static) </span>fromObject<span class="signature">(config)</span><span class="type-signature"> &rarr; {<a href="#pubfood-model-Slot">Slot</a>|null}</span></h4>
+<div class="description">
+    Create a new <a href="#pubfood-model-Slot">Slot</a> from an object.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>config</code></td>
+<td class="type">
+<span class="param-type"><a href="#SlotConfig">SlotConfig</a></span>
+</td>
+<td class="description last">slot object literal</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-model-Slot-validate"><span class="type-signature">(static) </span>validate<span class="signature">(config)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    Validate a slot configuration object.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>config</code></td>
+<td class="type">
+<span class="param-type"><a href="#SlotConfig">SlotConfig</a></span>
+</td>
+<td class="description last">slot configuration object</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-model-Slot-addBidProvider"><span class="type-signature"></span>addBidProvider<span class="signature">(bidProvider)</span><span class="type-signature"> &rarr; {<a href="#pubfood-model-Slot">Slot</a>}</span></h4>
+<div class="description">
+    Add bid provider allocated to the slot.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>bidProvider</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">
+                <h6>Properties</h6>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>provider</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The bid provider's name</td>
+        </tr>
+<tr>
+<td class="name"><code>slot</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">The slot name</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-model-Slot-addSize"><span class="type-signature"></span>addSize<span class="signature">(width, height)</span><span class="type-signature"> &rarr; {<a href="#pubfood-model-Slot">Slot</a>}</span></h4>
+<div class="description">
+    Add a size dimension.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>width</code></td>
+<td class="type">
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+</td>
+<td class="description last">the width dimension</td>
+        </tr>
+<tr>
+<td class="name"><code>height</code></td>
+<td class="type">
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+</td>
+<td class="description last">the height dimension</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-model-Slot-addSizes"><span class="type-signature"></span>addSizes<span class="signature">(slotSizes)</span><span class="type-signature"> &rarr; {<a href="#pubfood-model-Slot">Slot</a>}</span></h4>
+<div class="description">
+    Sets the slot's size/s
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slotSizes</code></td>
+<td class="type">
+<span class="param-type">array.&lt;number, number&gt;</span>
+</td>
+<td class="description last">
+                <h6>Properties</h6>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>0</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">width</td>
+        </tr>
+<tr>
+<td class="name"><code>1</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">height</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+</tbody>
+</table>
+<h5>Example</h5>
+<pre class="prettyprint"><code>slot.sizes([ [300, 250], [300, 600] ]);</code></pre>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood#provider.AuctionProvider">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-provider-AuctionProvider">
+<h2>
+        AuctionProvider
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-provider-AuctionProvider"><span class="type-signature"></span>new AuctionProvider<span class="signature">(auctionDelegate)</span><span class="type-signature"></span></h4>
+<div class="description">
+    AuctionProvider decorates the <a href="#AuctionDelegate">AuctionDelegate</a> to implement the publisher ad server requests.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>auctionDelegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#AuctionDelegate">AuctionDelegate</a></span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (7)</h3>
+<h4 class="name foo" id="pubfood-provider-AuctionProvider-validate"><span class="type-signature">(static) </span>validate<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    Validate a auction provider delegate.
+
+Checks that the delegate has the required properties specified by <a href="#AuctionDelegate">AuctionDelegate</a>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#AuctionDelegate">AuctionDelegate</a></span>
+</td>
+<td class="description last">bid provider delegate object literal</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-AuctionProvider-withDelegate"><span class="type-signature">(static) </span>withDelegate<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood-provider-AuctionProvider">AuctionProvider</a>|null}</span></h4>
+<div class="description">
+    Create a new <a href="#pubfood-provider-AuctionProvider">AuctionProvider</a> from an object.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#AuctionDelegate">AuctionDelegate</a></span>
+</td>
+<td class="description last">provider object literal</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-AuctionProvider-init"><span class="type-signature"></span>init<span class="signature">(targeting, done)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Initialize a auction provider.
+
+The AuctionProvider delegate Javascript and other tag setup is done here.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">array.&lt;(SlotTargetingObject|PageTargetingObject)&gt;</span>
+</td>
+<td class="description last">objects with bids and page level targeting. Can be arran of both <a href="#SlotTargetingObject">SlotTargetingObject</a> <em>and</em> <a href="#PageTargetingObject">PageTargetingObject</a>.</td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#auctionDoneCallback">auctionDoneCallback</a></span>
+</td>
+<td class="description last">a callback to execute on init complete</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-AuctionProvider-libUri"><span class="type-signature"></span>libUri<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+<div class="description">
+    Get the auction provider JavaScript library Uri/Url.
+</div>
+<h4 class="name foo" id="pubfood-provider-AuctionProvider-refresh"><span class="type-signature"></span>refresh<span class="signature">(targeting, done)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Refresh for ad slots
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">array.&lt;(SlotTargetingObject|PageTargetingObject)&gt;</span>
+</td>
+<td class="description last">objects with bids and page level targeting. Can be arran of both <a href="#SlotTargetingObject">SlotTargetingObject</a> <em>and</em> <a href="#PageTargetingObject">PageTargetingObject</a>.</td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#auctionDoneCallback">auctionDoneCallback</a></span>
+</td>
+<td class="description last">a callback to execute on init complete</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-AuctionProvider-setMediator"><span class="type-signature"></span>setMediator<span class="signature">(mediator)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Set the central auction mediator that orchestrates the auctions.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>mediator</code></td>
+<td class="type">
+<span class="param-type"><a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a></span>
+</td>
+<td class="description last">the auction mediator</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-AuctionProvider-setName"><span class="type-signature"></span>setName<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="#pubfood-provider-AuctionProvider">AuctionProvider</a>}</span></h4>
+<div class="description">
+    Set the provider's name.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">the auction provider name</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</article>
+
+</section>
+<section id="class-static-pubfood#provider.BidProvider">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="pubfood-provider-BidProvider">
+<h2>
+        BidProvider
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+<h4 class="name foo" id="pubfood-provider-BidProvider"><span class="type-signature"></span>new BidProvider<span class="signature">(delegate)</span><span class="type-signature"></span></h4>
+<div class="description">
+    BidProvider implements bidding partner requests.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#BidDelegate">BidDelegate</a></span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (6)</h3>
+<h4 class="name foo" id="pubfood-provider-BidProvider-validate"><span class="type-signature">(static) </span>validate<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    Validate a bid provider's delegate.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#BidDelegate">BidDelegate</a></span>
+</td>
+<td class="description last">bid provider delegate object literal</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-BidProvider-withDelegate"><span class="type-signature">(static) </span>withDelegate<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood-provider-BidProvider">BidProvider</a>|null}</span></h4>
+<div class="description">
+    Create a new <a href="#pubfood-provider-BidProvider">BidProvider</a> from a delegate object.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>delegate</code></td>
+<td class="type">
+<span class="param-type"><a href="#BidDelegate">BidDelegate</a></span>
+</td>
+<td class="description last">bid provider delegate object literal</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-BidProvider-init"><span class="type-signature"></span>init<span class="signature">(slots, pushBid, done)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Initialize a bid provider.
+
+The BidProvider delegate javascript tag and other setup is done here.
+
+Delegates to implementation BidDelegate.init
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slots</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Slot">Slot</a>&gt;</span>
+</td>
+<td class="description last">slots to bid on</td>
+        </tr>
+<tr>
+<td class="name"><code>pushBid</code></td>
+<td class="type">
+<span class="param-type"><a href="#pushBidCallback">pushBidCallback</a></span>
+</td>
+<td class="description last">callback that registers the bid; execute callback for each bid object</td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#bidDoneCallback">bidDoneCallback</a></span>
+</td>
+<td class="description last">a callback to execute on init complete</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-BidProvider-libUri"><span class="type-signature"></span>libUri<span class="signature">(uri)</span><span class="type-signature"> &rarr; {string}</span></h4>
+<div class="description">
+    Get or set the provider JavaScript library Uri.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>uri</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">location Uri</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-BidProvider-refresh"><span class="type-signature"></span>refresh<span class="signature">(slots, pushBid, done)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Refresh bids for ad slots
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slots</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Slot">Slot</a>&gt;</span>
+</td>
+<td class="description last">slots to bid on</td>
+        </tr>
+<tr>
+<td class="name"><code>pushBid</code></td>
+<td class="type">
+<span class="param-type"><a href="#pushBidCallback">pushBidCallback</a></span>
+</td>
+<td class="description last">callback that registers the bid; execute callback for each bid object</td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#bidDoneCallback">bidDoneCallback</a></span>
+</td>
+<td class="description last">a callback to execute on init complete</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-BidProvider-sync"><span class="type-signature"></span>sync<span class="signature">(loadSync<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+<div class="description">
+    Get or set the provider to load it's library either sync or async.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>loadSync</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">when true load the library in a sync fashion</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</article>
+
+</section>
+<section id="globalobj-undefined-undefined">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="undefined">
+<h2>
+</h2>
+</header>
+
+<article>
+    <div class="container-overview">
+</div>
+<div class="subsection">
+        <h3 class="subsection-title">Type Definitions</h3>
+<h4 class="name foo" id="apiStartCallback"><span class="type-signature"></span>apiStartCallback<span class="signature">(hasErrors, errors)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Provides information about configuration at start
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>hasErrors</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="description last">true if there are any configuration errors</td>
+        </tr>
+<tr>
+<td class="name"><code>errors</code></td>
+<td class="type">
+<span class="param-type">array</span>
+</td>
+<td class="description last">The list of errors</td>
+        </tr>
+</tbody>
+</table>
+<div class="members">
+  <h4 class="name" id="AuctionDelegate">AuctionDelegate</h4>
+<div class="description">
+      Interface for classes that are delegates for the AuctionProvider decorator..
+  </div>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">Auction provider delegate name</td>
+        </tr>
+<tr>
+<td class="name"><code>libUri</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>init</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">Auction provider delegate initial auction request.<br>Called at startup.
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">array.&lt;object&gt;</span>
+</td>
+<td class="description last">array of <a href="#SlotTargetingObject">SlotTargetingObject</a>|<a href="#PageTargetingObject">PageTargetingObject</a></td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#auctionDoneCallback">auctionDoneCallback</a></span>
+</td>
+<td class="description last">Callback to execute on done</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>refresh</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">Auction provider delegate refresh auction request.<br>Called at startup.
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">array.&lt;object&gt;</span>
+</td>
+<td class="description last">array of <a href="#SlotTargetingObject">SlotTargetingObject</a>|<a href="#PageTargetingObject">PageTargetingObject</a></td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#auctionDoneCallback">auctionDoneCallback</a></span>
+</td>
+<td class="description last">Callback to execute on done</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>trigger</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">Auction provider delegate function to trigger the auction. Default: <a href="#pubfood-timeout">pubfood.timeout</a>
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#auctionDoneCallback">auctionDoneCallback</a></span>
+</td>
+<td class="description last">Callback to initialize the auction provider</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<h4 class="name foo" id="auctionDoneCallback"><span class="type-signature"></span>auctionDoneCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Publisher ad server request processing is done.
+</div>
+<h5>Fires:</h5>
+<ul>
+    <li><a href="#pubfood-PubfoodEvent-event-AUCTION-COMPLETE">pubfood.PubfoodEvent.event:AUCTION_COMPLETE</a></li>
+</ul>
+<h4 class="name foo" id="AuctionTriggerFn"><span class="type-signature"></span>AuctionTriggerFn<span class="signature">(start)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Auction trigger function.
+
+A custom function that can be registered with an <a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a> that
+will determine when the publisher ad server request should be initiated.
+
+The <a href="#startAuctionCallback">start</a> callback must be invoked to start the auction.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>start</code></td>
+<td class="type">
+<span class="param-type"><a href="#startAuctionCallback">startAuctionCallback</a></span>
+</td>
+<td class="description last">callback to initiate the publisher ad server request</td>
+        </tr>
+</tbody>
+</table>
+<div class="members">
+  <h4 class="name" id="Bid">Bid</h4>
+<div class="description">
+      <a href="#pubfood-model-Bid">Bid</a>
+  </div>
+</div>
+<div class="members">
+  <h4 class="name" id="BidDelegate">BidDelegate</h4>
+<div class="description">
+      Interface for classes that are delegates for the BidProvider decorator.
+  </div>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">Bid provider delegate name.</td>
+        </tr>
+<tr>
+<td class="name"><code>libUri</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">location of the delegate JavaScript library/tag.</td>
+        </tr>
+<tr>
+<td class="name"><code>init</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last">Initial bid request for <a href="#pubfood-provider-BidProvider-init">BidProvider.init</a> delegate.
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slots</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Slot">Slot</a>&gt;</span>
+</td>
+<td class="description last">slots to bid on</td>
+        </tr>
+<tr>
+<td class="name"><code>pushBid</code></td>
+<td class="type">
+<span class="param-type"><a href="#pushBidCallback">pushBidCallback</a></span>
+</td>
+<td class="description last">Callback to execute on next bid available</td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#bidDoneCallback">bidDoneCallback</a></span>
+</td>
+<td class="description last">Callback to execute on done</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>refresh</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last">Refresh bids for <a href="#pubfood-provider-BidProvider-refresh">BidProvider.refresh</a> delegate.
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slots</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Slot">Slot</a>&gt;</span>
+</td>
+<td class="description last">slots to bid on</td>
+        </tr>
+<tr>
+<td class="name"><code>pushBid</code></td>
+<td class="type">
+<span class="param-type"><a href="#pushBidCallback">pushBidCallback</a></span>
+</td>
+<td class="description last">Callback to execute on next bid available</td>
+        </tr>
+<tr>
+<td class="name"><code>done</code></td>
+<td class="type">
+<span class="param-type"><a href="#bidDoneCallback">bidDoneCallback</a></span>
+</td>
+<td class="description last">Callback to execute on done</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="BidderSlots.">BidderSlots.</h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>provider</code></td>
+<td class="type">
+<span class="param-type"><a href="#pubfood-provider-BidProvider">BidProvider</a></span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>slots</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Slot">Slot</a>&gt;</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+</div>
+<h4 class="name foo" id="bidDoneCallback"><span class="type-signature"></span>bidDoneCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Callback to notify of <a href="#pubfood-provider-BidProvider">BidProvider</a> has its completed bidding process.
+</div>
+<h5>Fires:</h5>
+<ul>
+    <li><a href="#pubfood-PubfoodEvent-event-BID-COMPLETE">pubfood.PubfoodEvent.event:BID_COMPLETE</a></li>
+</ul>
+<div class="members">
+  <h4 class="name" id="BidObject">BidObject</h4>
+<div class="description">
+      Bid object structure for the <a href="#pushBidCallback">pushBidCallback</a>.
+  </div>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slot</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">slot name</td>
+        </tr>
+<tr>
+<td class="name"><code>value</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">publisher adserver targeting bid value</td>
+        </tr>
+<tr>
+<td class="name"><code>sizes</code></td>
+<td class="type">
+<span class="param-type">array.array.&lt;number, number&gt;</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">array of sizes for the slot the bid is for
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>0</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">width</td>
+        </tr>
+<tr>
+<td class="name"><code>1</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">height</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">key/value pairs for additional adserver targeting</td>
+        </tr>
+<tr>
+<td class="name"><code>label</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">optional targeting key to use for bid value</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="PageTargetingObject">PageTargetingObject</h4>
+<div class="description">
+      Global key value targeting for the page.
+  </div>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>type</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">the targeting level [slot|page]</td>
+        </tr>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">object.&lt;string, string&gt;</span>
+</td>
+<td class="description last">object containing key/value pair targeting</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="PubfoodConfig">PubfoodConfig</h4>
+<div class="description">
+      all properties are optional
+  </div>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>id</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"></td>
+        </tr>
+<tr>
+<td class="name"><code>auctionProviderTimeout</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">The maximum time the auction provider has before calling <a href="#auctionDoneCallback">auctionDoneCallback</a> inside the <a href="#pubfood-provider-AuctionProvider-init">AuctionProvider.init</a> or <a href="#pubfood-provider-AuctionProvider-refresh">AuctionProvider.refresh</a> methods</td>
+        </tr>
+<tr>
+<td class="name"><code>bidProviderTimeout</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">The maximum time the bid provider has before calling <a href="#bidDoneCallback">bidDoneCallback</a> inside the <a href="#pubfood-provider-BidProvider-init">BidProvider.init</a> or <a href="#pubfood-provider-BidProvider-refresh">BidProvider.refresh</a> methods</td>
+        </tr>
+<tr>
+<td class="name"><code>randomizeBidRequests</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="description last">Randomize the order in which <a href="#pubfood-provider-BidProvider">BidProvider</a> requests are made.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<h4 class="name foo" id="pushBidCallback"><span class="type-signature"></span>pushBidCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Callback to push bids into the list for publisher ad server auction.
+</div>
+<h5>Fires:</h5>
+<ul>
+    <li><a href="#pubfood-PubfoodEvent-event-BID-PUSH-NEXT">pubfood.PubfoodEvent.event:BID_PUSH_NEXT</a></li>
+</ul>
+<h4 class="name foo" id="Reporter"><span class="type-signature"></span>Reporter<span class="signature">(event)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Custom reporter.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>event</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">-
+                <h6>Properties</h6>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>type</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last">-</td>
+        </tr>
+<tr>
+<td class="name"><code>data</code></td>
+<td class="type">
+<span class="param-type">*</span>
+</td>
+<td class="description last">-</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+</tbody>
+</table>
+<div class="members">
+  <h4 class="name" id="SlotConfig">SlotConfig</h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">name of the slot/ad unit in <a href="#pubfood-provider-AuctionProvider">AuctionProvider</a> system</td>
+        </tr>
+<tr>
+<td class="name"><code>elementId</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">DOM target element id</td>
+        </tr>
+<tr>
+<td class="name"><code>sizes</code></td>
+<td class="type">
+<span class="param-type">array.&lt;number, number&gt;</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">array of slot sizes
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>0</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">width slot width</td>
+        </tr>
+<tr>
+<td class="name"><code>1</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">height slot height</td>
+        </tr>
+</tbody>
+</table>
+</td>
+        </tr>
+<tr>
+<td class="name"><code>bidProviders</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;string&gt;</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">array of BidProvider.name values</td>
+        </tr>
+</tbody>
+</table>
+<h5>Example</h5>
+<pre class="prettyprint"><code>var slotConfig = {
+      name: '/abc/123/rectangle',
+      elementId: 'div-left',
+      sizes: [ [300, 250], [300, 600] ],
+      bidProviders: [
+                      'p1', 'p2'
+                    ]
+    };</code></pre>
+</div>
+<div class="members">
+  <h4 class="name" id="SlotTargetingObject">SlotTargetingObject</h4>
+<div class="description">
+      Key value targeting for a specific slot.
+  </div>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>type</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">the targeting level [slot|page]</td>
+        </tr>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">the Slot.name if type is 'slot'</td>
+        </tr>
+<tr>
+<td class="name"><code>id</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">the generated identifier of the object</td>
+        </tr>
+<tr>
+<td class="name"><code>elementId</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">the target DOM element id for the slot</td>
+        </tr>
+<tr>
+<td class="name"><code>sizes</code></td>
+<td class="type">
+<span class="param-type">array.&lt;number, number&gt;</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">array of slot sizes</td>
+        </tr>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">object.&lt;string, string&gt;</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last">object containing key/value pair targeting</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<h4 class="name foo" id="startAuctionCallback"><span class="type-signature"></span>startAuctionCallback<span class="signature">()</span><span class="type-signature"></span></h4>
+<div class="description">
+    Start Publisher Ad Server auction request callback.
+
+This is the callback passed into the <a href="#AuctionTriggerFn">AuctionTriggerFn</a>.
+</div>
+<h4 class="name foo" id="TransformDelegate"><span class="type-signature"></span>TransformDelegate<span class="signature">(bids, params)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="#pubfood-model-Bid">Bid</a>&gt;|null}</span></h4>
+<div class="description">
+    Function delegates for the <a href="#pubfood-assembler-TransformOperator">TransformOperator</a> decorator.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>bids</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;<a href="#pubfood-model-Bid">Bid</a>&gt;</span>
+</td>
+<td class="description last">array of bids to transform</td>
+        </tr>
+<tr>
+<td class="name"><code>params</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">parameters as required by delegate function. Future use.</td>
+        </tr>
+</tbody>
+</table>
+<h5>Example</h5>
+<pre class="prettyprint"><code>var transformDelegate = function(bids, params) { console.log('operate on bids'); };</code></pre>
+<div class="members">
+  <h4 class="name" id="TransformOperator">TransformOperator</h4>
+<div class="description">
+      <a href="#pubfood-assembler-TransformOperator">TransformOperator</a>
+  </div>
+</div>
+</div>
+</article>
+
+</section>
+<section id="namespace-global-util">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="util">
+<h2>
+        util
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (2)</h3>
+<h4 class="name foo" id="util-asType"><span class="type-signature">(static) </span>asType<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+<div class="description">
+    Get the type name of an object.
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://javascriptweblog.wordpress.com/2011/08/08/fixing-the-javascript-typeof-operator/">https://javascriptweblog.wordpress.com/2011/08/08/fixing-the-javascript-typeof-operator/</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="util-random"><span class="type-signature">(static) </span>random<span class="signature">(collection)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+<div class="description">
+    Randomize the position of items in a collection.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>collection</code></td>
+<td class="type">
+<span class="param-type">array</span>
+</td>
+<td class="description last"></td>
+        </tr>
+</tbody>
+</table>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array">http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array</a></li>
+        </ul>
+    </dd>
+  </dl>
+</div>
+</article>
+
+</section>
 </div>
 </div><!-- end .row -->
 </div><!-- end .container-fluid -->

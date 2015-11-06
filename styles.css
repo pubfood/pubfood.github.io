@@ -916,7 +916,8 @@ img.image-center {
 #section-ip-1 {
 	max-width:1200px;
 	margin:0 auto; padding:0;
-	text-align:center; color:#1d1d1d;
+	/*text-align:center;*/
+	color:#1d1d1d;
 }
 
 #section-ip-2 {
@@ -931,7 +932,8 @@ img.image-center {
 }
 
 #section-ip-2 h2 {
-	text-align:center; color:#1d1d1d;
+	/*text-align:center;*/
+	color:#1d1d1d;
 }
 
 #section-ip-2 li {
@@ -951,12 +953,14 @@ img.image-center {
 @media only screen and (min-width:569px) {
 	#section-ip-3 {
 		max-width:1200px;
-		margin:0 auto; padding:0 7%;
+		margin:0 auto;
+		/*padding:0 7%;*/
 	}
 }
 
 #section-ip-3 h3 {
-	text-align:center; color:#1d1d1d;
+	/*text-align:center;*/
+	color:#1d1d1d;
 }
 
 #section-ip-3 li {

@@ -369,7 +369,7 @@ a.button-1:hover {
 	border:1px solid #00374f;
 	font-size:14px;
 	text-align:center;
-	background:#ba8249;
+	background:#f3e4d5;
 }
 
 @media only screen and (min-width:569px) {
@@ -976,7 +976,8 @@ img.image-center {
 
 #accordion-sub-menu {
 	padding:15px 25px; margin:0 0 30px;
-	background:#ba8249 url(images/bg-accordion-sub-menu.jpg) no-repeat scroll 50% 0;
+	background:#bb834a;
+	/*background:#ba8249 url(images/bg-accordion-sub-menu.jpg) no-repeat scroll 50% 0;*/
 	background-size:cover;
 }
 

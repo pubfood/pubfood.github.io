@@ -31,6 +31,7 @@ $('#main-nav').find('li').each(
 	function() {
 		var mn_page_name = $(this).find('a').attr('href');
 		mn_page_name = mn_page_name.toLowerCase();
+		mn_page_name = mn_page_name.replace('/','');
 		if (page_name == mn_page_name) {
 			$(this).find('a').addClass('mn-link-active');
 		}

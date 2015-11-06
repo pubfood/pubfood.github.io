@@ -60,9 +60,9 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-xs-12">
-<h1>Configuring your Ad Server</h1>
+<h3>Configuring your Ad Server</h3>
 <p class="text-big">Each header bidding partner probably has respective key-value pairs that are required for integration. Make sure to get these details directly from the partner, but the general steps below should cover the overall process.</p>
-<h2>Define Custom Keys</h2>
+<h4>Define Custom Keys</h4>
 <p class="text-big">In DFP's Inventory Tab, create the (free-form) custom keys for all of the header bidder partners that you are integrating through Pubfood.js.</p>
 </div>
 </div><!-- end .row -->
@@ -73,7 +73,7 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-xs-12">
-<h2>Line Item Setup</h2>
+<h4>Line Item Setup</h4>
 <ul>
 <li>Create orders for each of the header bidders that you're integrating into Pubfood.js.</li>
 <li>Within each order, you'll need to create line items for the different prices for each ad slot.</li>
@@ -88,7 +88,7 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-xs-12">
-<h3>Line Item Settings</h3>
+<h4>Line Item Settings</h4>
 <ul>
 <li>All header bidder partners should be set up with a line item type Price Priority. That way, it's a true auction and the partner with the highest bid will win the impressions.</li>
 <li>Set the imps goal as none and the end date as unlimited.</li>
@@ -96,7 +96,7 @@
 <li>Alternatively, publishers can still use waterfalls to manage auctions more granularly. Ensure that the correct KVPs are targeted for the bid values, and manage to your desired waterfall settings as appropriate.</li>
 </ul>
 
-<h3>Line Item Targeting</h3>
+<h4>Line Item Targeting</h4>
 <ul>
 <li>Target the line items to the correct DFP ad units.</li>
 <li>Use the header bidder partners custom key and add in the targeting value that will be passed into the ad server by Pubfood.js for that specific line item.<br />

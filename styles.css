@@ -16,7 +16,7 @@ body {
 	background:#fff6ed;
 	font-family:raleway, sans-serif;
 	font-size:14px; font-weight:400;
-	color:#00374f;
+	/*color:#00374f;*/
 }
 
 img {
@@ -62,7 +62,9 @@ li {
 .content h1 {
 	margin:0 0 10px;
 	line-height:1.5;
-	font-size:28px; color:#1d1d1d;
+	font-size:28px;
+	/*color:#1d1d1d;*/
+	color:#00374f;
 }
 
 @media only screen and (min-width:569px) {
@@ -82,7 +84,8 @@ li {
 .content h2 {
 	margin:0 0 15px;
 	line-height:1.5;
-	font-size:25px; color:#00374f;
+	font-size:25px;
+	color:#00374f;
 }
 
 @media only screen and (min-width:569px) {
@@ -102,7 +105,9 @@ li {
 .content h3 {
 	margin:0 0 15px;
 	line-height:1.5;
-	font-size:24px; color:#1d1d1d;
+	font-size:24px;
+	/*color:#1d1d1d;*/
+	color:#00374f;
 }
 
 @media only screen and (min-width:569px) {
@@ -933,7 +938,7 @@ img.image-center {
 
 #section-ip-2 h2 {
 	/*text-align:center;*/
-	color:#1d1d1d;
+	/*color:#1d1d1d;*/
 }
 
 #section-ip-2 li {
@@ -960,7 +965,7 @@ img.image-center {
 
 #section-ip-3 h3 {
 	/*text-align:center;*/
-	color:#1d1d1d;
+	/*color:#1d1d1d;*/
 }
 
 #section-ip-3 li {

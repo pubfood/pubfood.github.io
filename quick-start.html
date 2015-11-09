@@ -156,7 +156,7 @@
       <div class="step-text">
         <ol>
           <li>
-            Include the pubfood JavaScript library in your code.
+            Include the Pubfood JavaScript library in your code.
           </li>
           <li>
             <b><span class="code-ref">food.addSlot(...);</span></b>
@@ -166,8 +166,8 @@
             <b><span class="code-ref">food.addBidProvider(...);</span></b>
             <p>Define or copy your bidding partner JavaScript code.</p>
             <ol>
-              <li>on each bid, call the <b><span class="code-ref">pushBid({});</span></b> callback</li>
-              <li>when bidding finished, call the <b><span class="code-ref">done();</span></b> callback</li>
+              <li>On each bid, call the <b><span class="code-ref">pushBid({});</span></b> callback</li>
+              <li>When bidding finished, call the <b><span class="code-ref">done();</span></b> callback</li>
             </ol>
             <br>
           </li>
@@ -187,13 +187,13 @@
         </ol>
       </div>
       <div id="theAd" class="code-sample">
-          <b><em>How did this ad get here?</em></b>
+          <b>How did this ad get here?</b>
           <pre id="div-rail"></pre>
       </div>
     </div>
     <div class="step">
-      <h4>Include the pubfood library in your site code</h4>
-      <div class="step-text">To execute the following steps in your own code, you will need to include the pubfood JavaScript library.</div>
+      <h4>Include the Pubfood.js library in your site code</h4>
+      <div class="step-text">To execute the following steps in your own code, you will need to include the Pubfood JavaScript library.</div>
       <div class="code-sample">
         <b><a href="https://github.com/pubfood/pubfood/tree/master/dist">https://github.com/pubfood/pubfood/tree/master/dist</a></b>
         <pre id="step0-code" class="prettyprint linenums"></pre>
@@ -201,7 +201,7 @@
     </div>
     <div class="step">
       <h4>Define slots</h4>
-      <div class="step-text">You will tell Pubfood which of your ad server slots are available for bidding and which partners may bid for therm.</div>
+      <div class="step-text">You will tell Pubfood.js which of your ad server slots are available for bidding and which partners may bid for them.</div>
       <div class="code-sample">
         <pre id="step1-code" class="prettyprint linenums"></pre>
       </div>
@@ -209,14 +209,14 @@
     <div class="step">
       <h4>Define bidding partner</h4>
       <div class="step-text">
-        Pubfood does not need to know much about how your bid provider works. What it does need to know is:
+        Pubfood does not need to know much about how your bid provider works.
         <ul>
-          <li><span class="lines-ref">line 2</span> - the bidder name</li>
-          <li><span class="lines-ref">line 3</span> - the bid provider JavaScript library to load</li>
-          <li><span class="lines-ref">line 4</span> - the function to initialize bids</li>
-          <li><span class="lines-ref">line 15</span> - submit a bid with the <span class="code-ref">pushBid({});</span> callback</li>
-          <li><span class="lines-ref">line 24</span> - notify pubfood with the <span class="code-ref">done();</span> callback</li>
-          <li><span class="lines-ref">line 27</span> - the function to refresh bids</li>
+          <li><span class="lines-ref">Line 2</span> - The bidder name</li>
+          <li><span class="lines-ref">Line 3</span> - The bid provider JavaScript library to load</li>
+          <li><span class="lines-ref">Line 4</span> - The function to initialize bids</li>
+          <li><span class="lines-ref">Line 15</span> - Submit a bid with the <span class="code-ref">pushBid({});</span> callback</li>
+          <li><span class="lines-ref">Line 24</span> - Notify Pubfood.js with the <span class="code-ref">done();</span> callback</li>
+          <li><span class="lines-ref">Line 27</span> - The function to refresh bids</li>
         </ul>
       </div>
       <div class="code-sample">
@@ -228,11 +228,11 @@
       <div class="step-text">
         Set your auction provider that will receive bid targeting and send the targeting to auction in your ad server.
         <ul>
-          <li><span class="lines-ref">line 2</span> - the auction provider name</li>
-          <li><span class="lines-ref">line 3</span> - the auction provider JavaScript library to load</li>
-          <li><span class="lines-ref">line 4</span> - the function to initialize the auction</li>
-          <li><span class="lines-ref">line 29</span> - notify pubfood with the <span class="code-ref">done();</span> callback</li>
-          <li><span class="lines-ref">line 31</span> - the function to refresh with a new auction</li>
+          <li><span class="lines-ref">Line 2</span> - The auction provider name</li>
+          <li><span class="lines-ref">Line 3</span> - The auction provider JavaScript library to load</li>
+          <li><span class="lines-ref">Line 4</span> - The function to initialize the auction</li>
+          <li><span class="lines-ref">Line 29</span> - Notify Pubfood.js with the <span class="code-ref">done();</span> callback</li>
+          <li><span class="lines-ref">Line 31</span> - The function to refresh with a new auction</li>
         </ul>
       </div>
       <div class="code-sample">
@@ -242,10 +242,10 @@
     <div class="step">
       <h4>Define when to display ads</h4>
       <div class="step-text">
-        When pubfood has completed the auction orchestration, it will raise an event to indicate ads are ready to display.
+        When Pubfood.js has completed the auction orchestration, it will raise an event to indicate ads are ready to display.
         <ul>
-          <li><span class="lines-ref">line 1</span> - observe the auction provider</li>
-          <li><span class="lines-ref">line 3</span> - the auction provider will display the ad</li>
+          <li><span class="lines-ref">Line 1</span> - Observe the auction provider</li>
+          <li><span class="lines-ref">Line 3</span> - The auction provider will display the ad</li>
         </ul>
       </div>
       <div class="code-sample">
@@ -253,13 +253,13 @@
       </div>
     </div>
     <div class="step">
-      <h4>Start the pubfood auction</h4>
+      <h4>Start the Pubfood.js auction</h4>
       <div class="step-text">
-        Starting a pubfood auction will initiate and orchestrate the steps defined above.
+        Starting a Pubfood.js auction will initiate and orchestrate the steps defined above.
         <ul>
-          <li><span class="lines-ref">line 1</span> - bidders need to respond withing this time</li>
-          <li><span class="lines-ref">line 2</span> - we can observe all events for debugging</li>
-          <li><span class="lines-ref">line 5</span> - finally, start the auction</li>
+          <li><span class="lines-ref">Line 1</span> - Bidders need to respond within this time</li>
+          <li><span class="lines-ref">Line 2</span> - We can observe all events for debugging</li>
+          <li><span class="lines-ref">Line 5</span> - Finally, start the auction</li>
         </ul>
       </div>
       <div class="code-sample">
@@ -268,8 +268,8 @@
     </div>
   </div>
   <p>
-    <span style="font-size: larger; font-weight: bold">Very good</span>
-    You read through the steps. <a href="#theAd">This is the sample ad rendered by the steps.</a>
+    <span style="font-size: larger; font-weight: bold">Nicely done.</span>
+    You completed the steps. <a href="#theAd">Click here for a sample of the rendered ad.</a>
   </p>
   <div>
     <div id="step"></div>

@@ -36,6 +36,90 @@
 </style>
 
 <script src="/pubfood.min.js"></script>
+<script>
+  // global for the auction provider
+  window.auctionProviderOne = window.auctionProviderOne || {};
+  auctionProviderOne.cmd = auctionProviderOne.cmd || [];
+
+  // globals for all bid providers
+  window.bidProviderOne = window.bidProviderOne || {};
+  bidProviderOne.cmd = bidProviderOne.cmd || [];
+
+  var food = new pubfood();
+  food.addSlot({
+    name: '2476204-rail',
+    elementId: 'div-rail',
+    sizes: [[300, 250]],
+    bidProviders: ['bidProviderOne']
+  });
+  food.addBidProvider({
+    name: 'bidProviderOne',
+    libUri: '/simulated-bid-provider/bidProviderOne.js',
+    init: function(slots, pushBid, done) {
+      bidProviderOne.cmd.push(function() {
+        var encodedAvailability = encodeURIComponent('2476204-rail.650.300x250');
+        bidProviderOne.init('availability=' + encodedAvailability);
+      });
+      bidProviderOne.cmd.push(function() {
+        var getSize = function (raw) {
+          var sizeSplit = raw.split('x');
+          return [parseInt(sizeSplit[0], 10), parseInt(sizeSplit[1], 10)];
+        };
+        var parts = bidProviderOne.getAvailable().split('.');
+        pushBid({
+          slot: parts[0],
+          value: parts[1],
+          sizes: getSize(parts[2]),
+          label: 'avg_price',
+          targeting: {
+            pvd1: 'targeting'
+          }
+        });
+        done();
+      });
+    },
+    refresh: function(slots, pushBid, done) {
+    }
+  });
+  food.setAuctionProvider({
+    name: 'auctionProviderOne',
+    libUri: '/simulated-auction-provider/auctionProviderOne.js',
+    init: function(bids, done) {
+      auctionProviderOne.cmd.push(function() {
+        var i, key;
+        for (i = 0; i < bids.length; i++) {
+          var bid = bids[i];
+          if (bid.type === 'page') {
+            // set page level targeting
+            for (key in bid.targeting) {
+              auctionProviderOne.setTargeting(key, bid.targeting[key]);
+            }
+          }
+          if (bid.type === 'slot') {
+            var apSlot = auctionProviderOne.defineSlot(bid.name, bid.sizes, bid.elementId);
+            // set slot level targeting
+            for (key in bid.targeting) {
+              apSlot.setTargeting(key, bid.targeting[key]);
+            }
+          }
+        }
+      });
+      auctionProviderOne.cmd.push(function() {
+        auctionProviderOne
+          .enableSingleRequest()
+          .enableServices();
+      });
+      done();
+    },
+    refresh: function(bids, done) {
+    }
+  });
+  food.timeout(1500);
+  food.observe(function(ev) {
+    console.log(ev);
+  });
+  food.start();
+</script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -94,61 +178,6 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-xs-12">
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autorun=false&amp;skin=sons-of-obsidian"></script>
-  <script>
-    var insertStepScript = function(name, content) {
-      var el = document.getElementById(name);
-      if (el) {
-        var js = document.createElement('script');
-        js.innerHTML = content;
-        el.parentNode.insertBefore(js, el);
-      }
-    };
-
-    var insertStepDoc = function(name, content) {
-      var el = document.getElementById(name + '-code');
-      if (el) {
-        el.innerHTML = content;
-      }
-    };
-
-    var stepsRequested = 0;
-    var stepsReturned = 0;
-    var getStep = function(name, doScript) {
-      stepsRequested += 1;
-      var insertCode = doScript || true;
-      var xhr = new XMLHttpRequest();
-      xhr.onload = function(e) {
-        if (this.status === 200) {
-          var blob = new Blob([this.response], {type: 'text/javascript'});
-          var reader = new FileReader();
-          reader.addEventListener('loadend', function() {
-            if (insertCode) {
-              insertStepScript(name, reader.result);
-            }
-            insertStepDoc(name, reader.result);
-            stepsReturned += 1;
-            if (stepsRequested === stepsReturned) {
-              PR.prettyPrint();
-            }
-          });
-          reader.readAsText(blob);
-        }
-      };
-      xhr.open('GET', '/quick-start-' + name + '.js', true);
-      xhr.responseType = 'blob';
-      xhr.send();
-    };
-
-    // global for the auction provider
-    window.auctionProviderOne = window.auctionProviderOne || {};
-    auctionProviderOne.cmd = auctionProviderOne.cmd || [];
-
-    // globals for all bid providers
-    window.bidProviderOne = window.bidProviderOne || {};
-    bidProviderOne.cmd = bidProviderOne.cmd || [];
-  </script>
-
   <h3>Getting started with the Pubfood.js framework</h3>
   <div id="steps">
     <div class="step">
@@ -176,19 +205,27 @@
             <p>Define or copy your ad server JavaScript code to send bids to auction.</p>
           </li>
           <li>
-            <b><span class="code-ref">food.observe('AUCTION_POST_RUN', ...);</span></b>
-            <p>Define where to display your ad.</p>
-          </li>
-          <li>
             <b><span class="code-ref">food.timeout(...);</span></b><br>
             <b><span class="code-ref">food.start();</span></b>
             <p>Set a bidder timeout and start the pubfood auction.</p>
+          </li>
+          <li>
+            <b><span class="code-ref">food.observe('AUCTION_POST_RUN', ...);</span></b>
+            <p>Define where to display your ad.</p>
           </li>
         </ol>
       </div>
       <div id="theAd" class="code-sample">
           <b>How did this ad get here?</b>
           <pre id="div-rail"></pre>
+          <script>
+            // Note: this auction provider requires the `display` to be called after the div is available
+            food.observe('AUCTION_POST_RUN', function() {
+              auctionProviderOne.cmd.push(function() {
+                auctionProviderOne.display('div-rail');
+              });
+            });
+          </script>
       </div>
     </div>
     <div class="step">
@@ -196,14 +233,21 @@
       <div class="step-text">To execute the following steps in your own code, you will need to include the Pubfood JavaScript library.</div>
       <div class="code-sample">
         <b><a href="https://github.com/pubfood/pubfood/tree/master/dist">https://github.com/pubfood/pubfood/tree/master/dist</a></b>
-        <pre id="step0-code" class="prettyprint linenums"></pre>
+<pre id="step0-code" class="prettyprint linenums">&lt;script src=&quot;/pubfood.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;/* Or, inline pubfood.min.js in your code */&lt;/script&gt;</pre>
       </div>
     </div>
     <div class="step">
       <h4>Define slots</h4>
       <div class="step-text">You will tell Pubfood.js which of your ad server slots are available for bidding and which partners may bid for them.</div>
       <div class="code-sample">
-        <pre id="step1-code" class="prettyprint linenums"></pre>
+<pre id="step1-code" class="prettyprint linenums">var food = new pubfood();
+food.addSlot({
+  name: &#39;2476204-rail&#39;,
+  elementId: &#39;div-rail&#39;,
+  sizes: [[300, 250]],
+  bidProviders: [&#39;bidProviderOne&#39;]
+});</pre>
       </div>
     </div>
     <div class="step">
@@ -220,7 +264,35 @@
         </ul>
       </div>
       <div class="code-sample">
-        <pre id="step2-code" class="prettyprint linenums"></pre>
+<pre id="step2-code" class="prettyprint linenums">food.addBidProvider({
+  name: &#39;bidProviderOne&#39;,
+  libUri: &#39;/simulated-bid-provider/bidProviderOne.js&#39;,
+  init: function(slots, pushBid, done) {
+    bidProviderOne.cmd.push(function() {
+      var encodedAvailability = encodeURIComponent(&#39;2476204-rail.650.300x250&#39;);
+      bidProviderOne.init(&#39;availability=&#39; + encodedAvailability);
+    });
+    bidProviderOne.cmd.push(function() {
+      var getSize = function (raw) {
+        var sizeSplit = raw.split(&#39;x&#39;);
+        return [parseInt(sizeSplit[0], 10), parseInt(sizeSplit[1], 10)];
+      };
+      var parts = bidProviderOne.getAvailable().split(&#39;.&#39;);
+      pushBid({
+        slot: parts[0],
+        value: parts[1],
+        sizes: getSize(parts[2]),
+        label: &#39;avg_price&#39;,
+        targeting: {
+          pvd1: &#39;targeting&#39;
+        }
+      });
+      done();
+    });
+  },
+  refresh: function(slots, pushBid, done) {
+  }
+});</pre>
       </div>
     </div>
     <div class="step">
@@ -236,20 +308,39 @@
         </ul>
       </div>
       <div class="code-sample">
-        <pre id="step3-code" class="prettyprint lang-js linenums"></pre>
-      </div>
-    </div>
-    <div class="step">
-      <h4>Define when to display ads</h4>
-      <div class="step-text">
-        When Pubfood.js has completed the auction orchestration, it will raise an event to indicate ads are ready to display.
-        <ul>
-          <li><span class="lines-ref">Line 1</span> - Observe the auction provider</li>
-          <li><span class="lines-ref">Line 3</span> - The auction provider will display the ad</li>
-        </ul>
-      </div>
-      <div class="code-sample">
-        <pre id="step4-code" class="prettyprint lang-js linenums"></pre>
+<pre id="step3-code" class="prettyprint lang-js linenums">food.setAuctionProvider({
+  name: &#39;auctionProviderOne&#39;,
+  libUri: &#39;/simulated-auction-provider/auctionProviderOne.js&#39;,
+  init: function(bids, done) {
+    auctionProviderOne.cmd.push(function() {
+      var i, key;
+      for (i = 0; i &lt; bids.length; i++) {
+        var bid = bids[i];
+        if (bid.type === &#39;page&#39;) {
+          // set page level targeting
+          for (key in bid.targeting) {
+            auctionProviderOne.setTargeting(key, bid.targeting[key]);
+          }
+        }
+        if (bid.type === &#39;slot&#39;) {
+          var apSlot = auctionProviderOne.defineSlot(bid.name, bid.sizes, bid.elementId);
+          // set slot level targeting
+          for (key in bid.targeting) {
+            apSlot.setTargeting(key, bid.targeting[key]);
+          }
+        }
+      }
+    });
+    auctionProviderOne.cmd.push(function() {
+      auctionProviderOne
+        .enableSingleRequest()
+        .enableServices();
+    });
+    done();
+  },
+  refresh: function(bids, done) {
+  }
+});</pre>
       </div>
     </div>
     <div class="step">
@@ -259,11 +350,32 @@
         <ul>
           <li><span class="lines-ref">Line 1</span> - Bidders need to respond within this time</li>
           <li><span class="lines-ref">Line 2</span> - We can observe all events for debugging</li>
-          <li><span class="lines-ref">Line 5</span> - Finally, start the auction</li>
+          <li><span class="lines-ref">Line 5</span> - Start the auction</li>
         </ul>
       </div>
       <div class="code-sample">
-        <pre id="step5-code" class="prettyprint lang-js linenums"></pre>
+<pre id="step4-code" class="prettyprint lang-js linenums">food.timeout(1500);
+food.observe(function(ev) {
+  console.log(ev);
+});
+food.start();</pre>
+      </div>
+    </div>
+    <div class="step">
+      <h4>Define when to display ads</h4>
+      <div class="step-text">
+        When Pubfood.js has completed the auction orchestration, it will raise an event to indicate ads are ready to display.
+        <ul>
+          <li><span class="lines-ref">Line 1</span> - Observe the auction provider</li>
+          <li><span class="lines-ref">Line 3</span> - Finally, the auction provider will display the ad</li>
+        </ul>
+      </div>
+      <div class="code-sample">
+<pre id="step5-code" class="prettyprint lang-js linenums">food.observe(&#39;AUCTION_POST_RUN&#39;, function() {
+  auctionProviderOne.cmd.push(function() {
+    auctionProviderOne.display(&#39;div-rail&#39;);
+  });
+});</pre>
       </div>
     </div>
   </div>
@@ -271,23 +383,8 @@
     <span style="font-size: larger; font-weight: bold">Nicely done.</span>
     You completed the steps. <a href="#theAd">Click here for a sample of the rendered ad.</a>
   </p>
-  <div>
-    <div id="step"></div>
-    <div id="step1"></div>
-    <div id="step2"></div>
-    <div id="step3"></div>
-    <div id="step4"></div>
-    <div id="step5"></div>
-  </div>
-  <script>
-    getStep('step0', false);
-    getStep('step1');
-    getStep('step2');
-    getStep('step3');
-    getStep('step4');
-    getStep('step5');
-  </script>
 </div>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sons-of-obsidian"></script>
 </div><!-- end .row -->
 </div><!-- end .container-fluid -->
 </div><!-- end #section-ip-2 -->

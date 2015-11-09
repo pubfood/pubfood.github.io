@@ -1,0 +1,2 @@
+auctionProviderOne.fillSlot("div-rail",[300,250],"<div style=\x22width: 258px; height: 248px;border:solid 1px #aaa;padding:0 20px\x22><h3><div style=\x22color:#666\x22>auction ran</div><code>at 1500ms</code></h3><h4><div style=\x22color:#666\x22>bidders</div><code>were not available in time</code></h4><p><div style=\x22color:#666\x22>sizes</div><code>[[300,250]]</code></p><p><div style=\x22color:#666\x22>targeting</div><code></code></p></div>");
+auctionProviderOne.resume();

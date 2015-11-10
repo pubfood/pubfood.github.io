@@ -370,7 +370,7 @@ food.addSlot({
       </div>
     </div>
 
-    <div class="step">
+    <!--div class="step">
       <h4>5. Define when to display ads</h4>
       <div class="step-text">
         Set your auction provider that will receive bid targeting and send the targeting to auction in your ad server.
@@ -417,10 +417,10 @@ food.addSlot({
   }
 });</pre>
       </div>
-    </div>
+    </div-->
 
     <div class="step">
-      <h4>6. Start the Pubfood.js auction</h4>
+      <h4>5. Start the Pubfood.js auction</h4>
       <div class="step-text">
         Starting a Pubfood.js auction will initiate and orchestrate the steps defined above.
         <ul>
@@ -430,7 +430,7 @@ food.addSlot({
         </ul>
       </div>
       <div class="code-sample">
-<pre id="step5-code" class="prettyprint lang-js linenums">food.timeout(1500);
+<pre id="step4-code" class="prettyprint lang-js linenums">food.timeout(1500);
 food.observe(function(ev) {
   console.log(ev);
 });
@@ -438,6 +438,24 @@ food.start();</pre>
       </div>
     </div>
 
+  </div>
+
+  <div class="step">
+    <h4>6. Define when to display ads</h4>
+    <div class="step-text">
+      When Pubfood.js has completed the auction orchestration, it will raise an event to indicate ads are ready to display.
+      <ul>
+        <li><span class="lines-ref">Line 1</span> - Observe the auction provider</li>
+        <li><span class="lines-ref">Line 3</span> - Finally, the auction provider will display the ad</li>
+      </ul>
+    </div>
+    <div class="code-sample">
+<pre id="step5-code" class="prettyprint lang-js linenums">food.observe(&#39;AUCTION_POST_RUN&#39;, function() {
+  auctionProviderOne.cmd.push(function() {
+    auctionProviderOne.display(&#39;div-rail&#39;);
+  });
+});</pre>
+    </div>
   </div>
 
   <p>

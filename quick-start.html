@@ -33,9 +33,19 @@
 #div-rail p {
   margin: 0;
 }
+.loose li {
+  height:4em;
+}
+.loose span.code-ref {
+  margin-left:2em;
+}
+#theAd {
+  margin: 0 0 2em 2em;
+}
 </style>
 
 <script src="/pubfood.min.js"></script>
+
 <script>
   // global for the auction provider
   window.auctionProviderOne = window.auctionProviderOne || {};
@@ -179,57 +189,70 @@
 <div class="row">
 <div class="col-xs-12">
   <h3>Getting started with the Pubfood.js framework</h3>
-  <div id="steps">
-    <div class="step">
-      <h4><em>The steps</em></h4>
-      <div class="step-text">
-        <ol>
-          <li>
-            Include the Pubfood JavaScript library in your code.
-          </li>
-          <li>
-            <b><span class="code-ref">food.addSlot(...);</span></b>
-            <p>Define slots and which partner may bid for them.</p>
-          </li>
-          <li>
-            <b><span class="code-ref">food.addBidProvider(...);</span></b>
-            <p>Define or copy your bidding partner JavaScript code.</p>
-            <ol>
-              <li>On each bid, call the <b><span class="code-ref">pushBid({});</span></b> callback</li>
-              <li>When bidding finished, call the <b><span class="code-ref">done();</span></b> callback</li>
-            </ol>
-            <br>
-          </li>
-          <li>
-            <b><span class="code-ref">food.setAuctionProvider(...);</span></b>
-            <p>Define or copy your ad server JavaScript code to send bids to auction.</p>
-          </li>
-          <li>
-            <b><span class="code-ref">food.timeout(...);</span></b><br>
-            <b><span class="code-ref">food.start();</span></b>
-            <p>Set a bidder timeout and start the pubfood auction.</p>
-          </li>
-          <li>
-            <b><span class="code-ref">food.observe('AUCTION_POST_RUN', ...);</span></b>
-            <p>Define where to display your ad.</p>
-          </li>
-        </ol>
-      </div>
-      <div id="theAd" class="code-sample">
-          <b>How did this ad get here?</b>
-          <pre id="div-rail"></pre>
-          <script>
-            // Note: this auction provider requires the `display` to be called after the div is available
-            food.observe('AUCTION_POST_RUN', function() {
-              auctionProviderOne.cmd.push(function() {
-                auctionProviderOne.display('div-rail');
-              });
-            });
-          </script>
-      </div>
+  <div class="summary">
+    <h4><em>Quick Summary</em></h4>
+    <div class="step-text">
+      <ul class="loose">
+        <li>
+          Include the Pubfood JavaScript library in your code.<br/>
+          <b><span class="code-ref">&lt;script src="/pubfood-min.js">&lt;/script></span></b>
+        </li>
+        <li>
+          Define slots and which partner may bid for them.<br/>
+          <b><span class="code-ref">food.addSlot(...);</span></b>
+        </li>
+        <li>
+          Define or copy your bidding partner JavaScript code.<br/>
+          <b><span class="code-ref">food.addBidProvider(...);</span></b>
+        </li>
+        <li>
+          Define or copy your ad server JavaScript code to send bids to auction.<br/>
+          <b><span class="code-ref">food.setAuctionProvider(...);</span></b>
+        </li>
+        <li>
+          Define where to display your ad.<br/>
+          <b><span class="code-ref">food.observe('AUCTION_POST_RUN', ...);</span></b>
+        </li>
+        <li>
+          Set a timeout for all bidders to submit a bid.<br/>
+          <b><span class="code-ref">food.timeout(...);</span></b>
+        </li>
+        <li>
+          And start the pubfood auction.<br/>
+          <b><span class="code-ref">food.start();</span></b>
+        </li>
+      </ul>
+      And finally:
+      <ul>
+        <li>
+          On each result received from a bidder, call the <b>pushBid({...});</b> callback to register the bid.
+        </li>
+        <li>
+          When bidding is finished, call the <b>done();</b> callback to process the results.
+        </li>
+      </ul>
     </div>
+  </div>
+  <h3>Here is a live example:</h3>
+  <div class="example">
+    <div id="theAd" class="code-sample">
+      <pre id="div-rail">[Winning ad creative will appear here]</pre>
+      <script>
+        // Note: this auction provider requires the `display` to be called after the div is available
+        food.observe('AUCTION_POST_RUN', function() {
+          auctionProviderOne.cmd.push(function() {
+            auctionProviderOne.display('div-rail');
+          });
+        });
+      </script>
+    </div>
+    <p>How did this ad get here? By following these steps...</p>
+  </div>
+  <h3>Detailed Instructions</h3>
+  <div id="steps">
+
     <div class="step">
-      <h4>Include the Pubfood.js library in your site code</h4>
+      <h4>1. Include the Pubfood.js library in your site code</h4>
       <div class="step-text">To execute the following steps in your own code, you will need to include the Pubfood JavaScript library.</div>
       <div class="code-sample">
         <b><a href="https://github.com/pubfood/pubfood/tree/master/dist">https://github.com/pubfood/pubfood/tree/master/dist</a></b>
@@ -237,8 +260,9 @@
 &lt;script&gt;/* Or, inline pubfood.min.js in your code */&lt;/script&gt;</pre>
       </div>
     </div>
+
     <div class="step">
-      <h4>Define slots</h4>
+      <h4>2. Define slots</h4>
       <div class="step-text">You will tell Pubfood.js which of your ad server slots are available for bidding and which partners may bid for them.</div>
       <div class="code-sample">
 <pre id="step1-code" class="prettyprint linenums">var food = new pubfood();
@@ -250,8 +274,9 @@ food.addSlot({
 });</pre>
       </div>
     </div>
+
     <div class="step">
-      <h4>Define bidding partner</h4>
+      <h4>3. Define bidding partner</h4>
       <div class="step-text">
         Pubfood does not need to know much about how your bid provider works.
         <ul>
@@ -295,8 +320,9 @@ food.addSlot({
 });</pre>
       </div>
     </div>
+
     <div class="step">
-      <h4>Define your ad server</h4>
+      <h4>4. Define your ad server</h4>
       <div class="step-text">
         Set your auction provider that will receive bid targeting and send the targeting to auction in your ad server.
         <ul>
@@ -343,8 +369,58 @@ food.addSlot({
 });</pre>
       </div>
     </div>
+
+    <!--div class="step">
+      <h4>5. Define when to display ads</h4>
+      <div class="step-text">
+        Set your auction provider that will receive bid targeting and send the targeting to auction in your ad server.
+        <ul>
+          <li><span class="lines-ref">Line 2</span> - The auction provider name</li>
+          <li><span class="lines-ref">Line 3</span> - The auction provider JavaScript library to load</li>
+          <li><span class="lines-ref">Line 4</span> - The function to initialize the auction</li>
+          <li><span class="lines-ref">Line 29</span> - Notify Pubfood.js with the <span class="code-ref">done();</span> callback</li>
+          <li><span class="lines-ref">Line 31</span> - The function to refresh with a new auction</li>
+        </ul>
+      </div>
+      <div class="code-sample">
+<pre id="step4-code" class="prettyprint lang-js linenums">food.setAuctionProvider({
+  name: &#39;auctionProviderOne&#39;,
+  libUri: &#39;/simulated-auction-provider/auctionProviderOne.js&#39;,
+  init: function(bids, done) {
+    auctionProviderOne.cmd.push(function() {
+      var i, key;
+      for (i = 0; i &lt; bids.length; i++) {
+        var bid = bids[i];
+        if (bid.type === &#39;page&#39;) {
+          // set page level targeting
+          for (key in bid.targeting) {
+            auctionProviderOne.setTargeting(key, bid.targeting[key]);
+          }
+        }
+        if (bid.type === &#39;slot&#39;) {
+          var apSlot = auctionProviderOne.defineSlot(bid.name, bid.sizes, bid.elementId);
+          // set slot level targeting
+          for (key in bid.targeting) {
+            apSlot.setTargeting(key, bid.targeting[key]);
+          }
+        }
+      }
+    });
+    auctionProviderOne.cmd.push(function() {
+      auctionProviderOne
+        .enableSingleRequest()
+        .enableServices();
+    });
+    done();
+  },
+  refresh: function(bids, done) {
+  }
+});</pre>
+      </div>
+    </div-->
+
     <div class="step">
-      <h4>Start the Pubfood.js auction</h4>
+      <h4>5. Start the Pubfood.js auction</h4>
       <div class="step-text">
         Starting a Pubfood.js auction will initiate and orchestrate the steps defined above.
         <ul>
@@ -361,27 +437,32 @@ food.observe(function(ev) {
 food.start();</pre>
       </div>
     </div>
-    <div class="step">
-      <h4>Define when to display ads</h4>
-      <div class="step-text">
-        When Pubfood.js has completed the auction orchestration, it will raise an event to indicate ads are ready to display.
-        <ul>
-          <li><span class="lines-ref">Line 1</span> - Observe the auction provider</li>
-          <li><span class="lines-ref">Line 3</span> - Finally, the auction provider will display the ad</li>
-        </ul>
-      </div>
-      <div class="code-sample">
+
+  </div>
+
+  <div class="step">
+    <h4>6. Define when to display ads</h4>
+    <div class="step-text">
+      When Pubfood.js has completed the auction orchestration, it will raise an event to indicate ads are ready to display.
+      <ul>
+        <li><span class="lines-ref">Line 1</span> - Observe the auction provider</li>
+        <li><span class="lines-ref">Line 3</span> - Finally, the auction provider will display the ad</li>
+      </ul>
+    </div>
+    <div class="code-sample">
 <pre id="step5-code" class="prettyprint lang-js linenums">food.observe(&#39;AUCTION_POST_RUN&#39;, function() {
   auctionProviderOne.cmd.push(function() {
     auctionProviderOne.display(&#39;div-rail&#39;);
   });
 });</pre>
-      </div>
     </div>
   </div>
+
   <p>
     <span style="font-size: larger; font-weight: bold">Nicely done.</span>
-    You completed the steps. <a href="#theAd">Click here for a sample of the rendered ad.</a>
+    You completed this quick tutorial.<br/>
+    <a href="#theAd">Click here for a sample of the rendered ad.</a><br/>
+    See the <a href="/api-reference">API REFERENCE</a> for more.
   </p>
 </div>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sons-of-obsidian"></script>

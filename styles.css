@@ -14,8 +14,8 @@ black = #1d1d1d
 body {
 	margin:0; padding:0;
 	background:#fff6ed;
-	font-family:raleway, sans-serif;
-	font-size:14px; font-weight:400;
+	font-family:helvetica, arial, sans-serif;
+	font-size:18px; font-weight:400;
 	/*color:#00374f;*/
 }
 
@@ -42,70 +42,69 @@ li {
 
 .content {
 	line-height:1.7;
-	font-size:17px;
+	font-size:16px;
 }
 
 @media only screen and (min-width:569px) {
 	.content {
 		line-height:1.7;
-		font-size:21px;
+		font-size:17px;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content {
 		line-height:1.7;
-		font-size:24px;
+		font-size:18px;
 	}
 }
 
 .content h1 {
 	margin:0 0 10px;
 	line-height:1.5;
-	font-size:28px;
-	/*color:#1d1d1d;*/
+	font-size:24px; font-weight:bold;
 	color:#00374f;
 }
 
 @media only screen and (min-width:569px) {
 	.content h1 {
 		margin:0 0 15px;
-		font-size:39px;
+		font-size:30px; font-weight:normal;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content h1 {
 		margin:0 0 15px;
-		font-size:52px;
+		font-size:42px;
 	}
 }
 
 .content h2 {
 	margin:0 0 15px;
 	line-height:1.5;
-	font-size:25px;
+	font-size:21px; font-weight:bold;
 	color:#00374f;
 }
 
 @media only screen and (min-width:569px) {
 	.content h2 {
 		margin:0 0 15px;
-		font-size:37px;
+		font-size:28px; font-weight:normal;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content h2 {
 		margin:0 0 15px;
-		font-size:50px;
+		font-size:33px;
 	}
 }
 
 .content h3.front {
 	margin:0 0 15px;
 	line-height:1.5;
-	font-size:24px;
+	font-size:21px;
 	/*color:#1d1d1d;*/
 	color:#00374f;
 }
@@ -113,77 +112,76 @@ li {
 @media only screen and (min-width:569px) {
 	.content h3.front {
 		margin:0 0 15px;
-		font-size:32px;
+		font-size:28px;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content h3.front {
 		margin:0 0 20px;
-		font-size:42px;
+		font-size:33px;
 	}
 }
 
 .content h3 {
 	margin:0 0 15px;
 	line-height:1.5;
-	font-size:24px;
-	/*color:#1d1d1d;*/
+	font-size:19px; font-weight:bold;
 	color:#00374f;
 }
 
 @media only screen and (min-width:569px) {
 	.content h3 {
 		margin:0 0 15px;
-		font-size:28px;
+		font-size:24px;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content h3 {
 		margin:0 0 20px;
-		font-size:32px;
+		font-size:29px; font-weight:normal;
 	}
 }
 
 .content h4 {
 	margin:0 0 15px;
 	line-height:1.5;
-	font-size:21px;
+	font-size:16px; font-weight:bold;
 	color:#00374f;
 }
 
 @media only screen and (min-width:569px) {
 	.content h4 {
 		margin:0 0 15px;
-		font-size:24px;
+		font-size:17px;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content h4 {
 		margin:0 0 20px;
-		font-size:28px;
+		font-size:18px;
 	}
 }
 
 .content h5 {
 	margin:0 0 15px;
 	line-height:1.7;
-	font-size:17px; font-weight:bold;
+	font-size:16px; font-weight:bold;
 }
 
 @media only screen and (min-width:569px) {
 	.content h5 {
 		margin:0 0 15px;
-		font-size:21px;
+		font-size:17px;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content h5 {
 		margin:0 0 20px;
-		font-size:24px;
+		font-size:18px;
 	}
 }
 
@@ -277,20 +275,19 @@ li {
 
 .content ul li {
 	margin:15px 0; padding:0 0 0 20px;
-	background:url(images/li-arrow-3-2.png) no-repeat scroll 0 10px;
+	background:url(images/li-arrow-3-2.png) no-repeat scroll 0 9px;
 }
 
 @media only screen and (min-width:569px) {
 	.content ul li {
 		margin:15px 0; padding:0 0 0 30px;
-		background:url(images/li-arrow-3-1.png) no-repeat scroll 0 11px;
+		background:url(images/li-arrow-3-1.png) no-repeat scroll 0 9px;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.content ul li {
 		margin:15px 0;
-		background-position:0 14px;
 	}
 }
 
@@ -327,7 +324,7 @@ a.button-1 {
 	a.button-1 {
 		margin:25px 0; padding:5px 20px;
 		line-height:1.5;
-		font-size:24px;
+		font-size:22px;
 	}
 }
 
@@ -335,7 +332,7 @@ a.button-1 {
 		a.button-1 {
 		margin:25px 0; padding:4px 25px 2px;
 		line-height:1.5;
-		font-size:37px;
+		font-size:35px;
 	}
 }
 
@@ -346,6 +343,28 @@ p a.button-1 {
 a.button-1:hover {
 	color:#00374f; text-decoration:none;
 	background:#fff;
+}
+
+.content-column-1 {
+	
+}
+
+@media only screen and (min-width:1000px) {
+	.content-column-1 {
+		float:right;
+		width:30%;
+	}
+}
+
+.content-column-2 {
+	
+}
+
+@media only screen and (min-width:1000px) {
+	.content-column-2 {
+		float:left;
+		width:65%;
+	}
 }
 
 #section-api-1 table {
@@ -610,7 +629,7 @@ img.image-center {
 
 @media only screen and (min-width:569px) {
 	.text-big {
-		font-size:125%;
+		font-size:120%;
 	}
 }
 
@@ -699,7 +718,7 @@ img.image-center {
 @media only screen and (min-width:569px) {
 	.top-w-3 {
 		padding:20px 0 0;
-		font-size:26px;
+		font-size:23px;
 	}
 }
 
@@ -707,7 +726,7 @@ img.image-center {
 	.top-w-3 {
 		padding:20px 0 0;
 		line-height:1.5;
-		font-size:40px;
+		font-size:35px;
 	}
 }
 
@@ -720,34 +739,35 @@ img.image-center {
 .top-w-3 h1 {
 	margin:0 0 8px;
 	line-height:1.5;
-	font-size:28px; color:#ba8249;
+	font-size:25px; font-weight:bold;
+	color:#ba8249;
 }
 
 @media only screen and (min-width:321px) {
 	.top-w-3 h1 {
 		margin:0 0 10px;
-		font-size:28px;
+		font-size:26px;
 	}
 }
 
 @media only screen and (min-width:569px) {
 	.top-w-3 h1 {
 		margin:0 0 15px;
-		font-size:40px;
+		font-size:37px; font-weight:normal;
 	}
 }
 
 @media only screen and (min-width:900px) {
 	.top-w-3 h1 {
 		margin:0 0 15px;
-		font-size:55px;
+		font-size:50px;
 	}
 }
 
 @media only screen and (min-width:1200px) {
 	.top-w-3 h1 {
 		margin:0 0 15px;
-		font-size:65px;
+		font-size:60px;
 	}
 }
 
@@ -1007,15 +1027,36 @@ img.image-center {
 }
 
 #accordion-sub-menu {
+	overflow:auto;
 	padding:15px 25px; margin:0 0 30px;
 	background:#bb834a;
 	/*background:#ba8249 url(images/bg-accordion-sub-menu.jpg) no-repeat scroll 50% 0;*/
 	background-size:cover;
+	font-size:16px;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:1000px) {
 	#accordion-sub-menu {
+		top:50px;
 		padding:25px 50px;
+		font-size:16px;
+	}
+}
+
+#accordion-sub-menu.affix {
+	position:static;
+}
+
+@media only screen and (min-width:1000px) {
+	#accordion-sub-menu.affix {
+		position:fixed; top:25px;
+		width:29%;
+	}
+}
+
+@media only screen and (min-width:1200px) {
+	#accordion-sub-menu.affix {
+		width:26%;
 	}
 }
 
@@ -1025,12 +1066,14 @@ img.image-center {
 	background:url(images/bg-arrow-3-1.png) no-repeat scroll 100% 55%;
 	color:#fff;
 	cursor:pointer;
+	font-size:20px;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:1000px) {
 	#accordion-sub-menu h3 {
 		margin:0 0 10px;
 		background-image:url(images/bg-arrow-3-2.png);
+		font-size:26px;
 	}
 }
 
@@ -1047,14 +1090,14 @@ img.image-center {
 	margin:0 0 25px; padding:0;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:1000px) {
 	#accordion-sub-menu ul {
 		display:block;
 	}
 }
 
 #accordion-sub-menu ul li {
-	margin:0; padding-left:0;
+	margin:0 0 5px; padding-left:0;
 	background:none;
 }
 
@@ -1066,11 +1109,28 @@ img.image-center {
 	color:#00374f; text-decoration:underline;
 }
 
+#accordion-sub-menu .nav > li > a {
+	padding:0;
+}
+
+#accordion-sub-menu .nav > li > a:hover {
+	background:none;
+}
+
+#accordion-sub-menu .nav-pills > li > a {
+	border-radius:0;	
+}
+
+#accordion-sub-menu .nav-pills > li.active > a {
+	color:#fff;
+	background:none;
+}
+
 #accordion-sub-menu .accordion-heading-active {
 	background:url(images/bg-arrow-3-2.png) no-repeat scroll 100% 55%;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:1000px) {
 	#accordion-sub-menu .accordion-heading-active {
 		background-image:url(images/bg-arrow-3-1.png);
 	}
@@ -1430,21 +1490,21 @@ body.home .f-logo-2 {
 	#main-nav li a {
 		padding:0; margin:0 0 0 32px;
 		line-height:1;
-		font-size:17px; font-weight:bold;
+		font-size:16px; font-weight:bold;
 	}
 }
 
 @media only screen and (min-width:1100px) {
 	#main-nav li a {
 		padding:0; margin:0 0 0 35px;
-		font-size:19px;
+		font-size:18px;
 	}
 }
 
 @media only screen and (min-width:1200px) {
 	#main-nav li a {
 		padding:0; margin:0 0 0 45px;
-		font-size:20px;
+		font-size:19px;
 	}
 }
 

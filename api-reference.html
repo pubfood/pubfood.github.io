@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#accordion-sub-menu">
 
 <!-- begin header -->
 <div class="top-wrapper-outer">
@@ -57,15 +57,38 @@
 <!-- end section connector :: needed to complete header -->
 <div class="container-fluid">
 <div class="row">
-<div class="col-sm-4 col-sm-push-8">
-<div id="accordion-sub-menu">
-<h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="#pubfood">pubfood</a></li><li><a href="#pubfood-PubfoodError">PubfoodError</a></li><li><a href="#pubfood-PubfoodEvent">PubfoodEvent</a></li><li><a href="#pubfood-assembler-BidAssembler">BidAssembler</a></li><li><a href="#pubfood-assembler-RequestAssembler">RequestAssembler</a></li><li><a href="#pubfood-assembler-TransformOperator">TransformOperator</a></li><li><a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a></li><li><a href="#pubfood-model-Bid">Bid</a></li><li><a href="#pubfood-model-Slot">Slot</a></li><li><a href="#pubfood-provider-AuctionProvider">AuctionProvider</a></li><li><a href="#pubfood-provider-BidProvider">BidProvider</a></li></ul><h3>Events</h3><ul><li><a href="#pubfood-PubfoodEvent-AUCTION_COMPLETE">AUCTION_COMPLETE</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_GO">AUCTION_GO</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_LIB_LOADED">AUCTION_LIB_LOADED</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_LIB_START">AUCTION_LIB_START</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_POST_RUN">AUCTION_POST_RUN</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_REFRESH">AUCTION_REFRESH</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_TRIGGER">AUCTION_TRIGGER</a></li><li><a href="#pubfood-PubfoodEvent-BID_ASSEMBLER">BID_ASSEMBLER</a></li><li><a href="#pubfood-PubfoodEvent-BID_COMPLETE">BID_COMPLETE</a></li><li><a href="#pubfood-PubfoodEvent-BID_LIB_LOADED">BID_LIB_LOADED</a></li><li><a href="#pubfood-PubfoodEvent-BID_LIB_START">BID_LIB_START</a></li><li><a href="#pubfood-PubfoodEvent-BID_PUSH_NEXT">BID_PUSH_NEXT</a></li><li><a href="#pubfood-PubfoodEvent-BID_START">BID_START</a></li><li><a href="#pubfood-PubfoodEvent-ERROR">ERROR</a></li><li><a href="#pubfood-PubfoodEvent-INVALID">INVALID</a></li><li><a href="#pubfood-PubfoodEvent-PUBFOOD_API_LOAD">PUBFOOD_API_LOAD</a></li><li><a href="#pubfood-PubfoodEvent-PUBFOOD_API_START">PUBFOOD_API_START</a></li><li><a href="#pubfood-PubfoodEvent-WARN">WARN</a></li></ul><h3>Namespaces</h3><ul><li><a href="#util">util</a></li></ul>
+<div class="col-xs-12">
+<div class="content-column-1 hidden-print hidden-xs hidden-sm">
+<div id="accordion-sub-menu" data-spy="affix" data-offset-top="275">
+<h2><a href="index.html">Home</a></h2>
+
+<ul class="nav nav-pills nav-stacked">
+<li>
+<h3><a href="#anchor-section-heading-1">Classes</a></h3>
+    <ul class="nav nav-pills nav-stacked">
+    	<li><a href="#pubfood">pubfood</a></li><li><a href="#pubfood-PubfoodError">PubfoodError</a></li><li><a href="#pubfood-PubfoodEvent">PubfoodEvent</a></li><li><a href="#pubfood-assembler-BidAssembler">BidAssembler</a></li><li><a href="#pubfood-assembler-RequestAssembler">RequestAssembler</a></li><li><a href="#pubfood-assembler-TransformOperator">TransformOperator</a></li><li><a href="#pubfood-mediator-AuctionMediator">AuctionMediator</a></li><li><a href="#pubfood-model-Bid">Bid</a></li><li><a href="#pubfood-model-Slot">Slot</a></li><li><a href="#pubfood-provider-AuctionProvider">AuctionProvider</a></li><li><a href="#pubfood-provider-BidProvider">BidProvider</a></li>
+    </ul>
+</li>
+<li>
+<h3><a href="#anchor-section-heading-2">Events</a></h3>
+    <ul class="nav nav-pills nav-stacked">
+    	<li><a href="#pubfood-PubfoodEvent-AUCTION_COMPLETE">AUCTION_COMPLETE</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_GO">AUCTION_GO</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_LIB_LOADED">AUCTION_LIB_LOADED</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_LIB_START">AUCTION_LIB_START</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_POST_RUN">AUCTION_POST_RUN</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_REFRESH">AUCTION_REFRESH</a></li><li><a href="#pubfood-PubfoodEvent-AUCTION_TRIGGER">AUCTION_TRIGGER</a></li><li><a href="#pubfood-PubfoodEvent-BID_ASSEMBLER">BID_ASSEMBLER</a></li><li><a href="#pubfood-PubfoodEvent-BID_COMPLETE">BID_COMPLETE</a></li><li><a href="#pubfood-PubfoodEvent-BID_LIB_LOADED">BID_LIB_LOADED</a></li><li><a href="#pubfood-PubfoodEvent-BID_LIB_START">BID_LIB_START</a></li><li><a href="#pubfood-PubfoodEvent-BID_PUSH_NEXT">BID_PUSH_NEXT</a></li><li><a href="#pubfood-PubfoodEvent-BID_START">BID_START</a></li><li><a href="#pubfood-PubfoodEvent-ERROR">ERROR</a></li><li><a href="#pubfood-PubfoodEvent-INVALID">INVALID</a></li><li><a href="#pubfood-PubfoodEvent-PUBFOOD_API_LOAD">PUBFOOD_API_LOAD</a></li><li><a href="#pubfood-PubfoodEvent-PUBFOOD_API_START">PUBFOOD_API_START</a></li><li><a href="#pubfood-PubfoodEvent-WARN">WARN</a></li>
+    </ul>
+</li>
+<li>
+<h3 style="margin-bottom:0"><a href="#anchor-section-heading-3">Namespaces</a></h3>
+    <ul class="nav nav-pills nav-stacked">
+    	<li><a href="#util">util</a></li>
+    </ul>
+</li>
+</ul>
 </div><!-- end #accordion-sub-menu -->
-</div>
-<div class="col-sm-8 col-sm-pull-4">
+</div><!-- end .content-column-1 -->
+<div class="content-column-2">
 <section id="class-global-pubfood">
 <header id="pubfood">
 <h2>
+  <div id="anchor-section-heading-1"></div>
         pubfood
         </h2>
 </header>
@@ -1045,7 +1068,10 @@ p.observe(reporter);
 </div>
 </div>
 <div class="subsection">
-          <h3 class="subsection-title">Events</h3>
+          <h3 class="subsection-title">
+            <div id="anchor-section-heading-2"></div>
+            Events
+          </h3>
 <h4 class="name foo" id="pubfood-PubfoodEvent-AUCTION_COMPLETE">AUCTION_COMPLETE</h4>
 <div class="description">
     The auction has completed
@@ -1826,7 +1852,7 @@ publisher ad server request <a href="#pubfood-provider-AuctionProvider">AuctionP
 <td class="attributes">
 &lt;optional><br>
 </td>
-<td class="description last">optional label for adserver key targeting for bid value e.g. <label>=2.00</td>
+<td class="description last">optional label for adserver key targeting for bid value e.g. <label>=2.00</label></td>
         </tr>
 </tbody>
 </table>
@@ -3478,6 +3504,7 @@ This is the callback passed into the <a href="#AuctionTriggerFn">AuctionTriggerF
 
 <header id="util">
 <h2>
+  <div id="anchor-section-heading-3"></div>
         util
         </h2>
 </header>
@@ -3534,6 +3561,8 @@ This is the callback passed into the <a href="#AuctionTriggerFn">AuctionTriggerF
 </article>
 
 </section>
+</div><!-- end .content-column-2 -->
+<div style="clear:both"></div>
 </div>
 </div><!-- end .row -->
 </div><!-- end .container-fluid -->

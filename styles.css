@@ -12,6 +12,7 @@ black = #1d1d1d
  */
 
 body {
+	position:relative;
 	margin:0; padding:0;
 	background:#fff6ed;
 	font-family:helvetica, arial, sans-serif;
@@ -1028,7 +1029,7 @@ img.image-center {
 
 #accordion-sub-menu {
 	overflow:auto;
-	padding:15px 25px; margin:0 0 30px;
+	padding:15px 25px 0; margin:0 0 30px;
 	background:#bb834a;
 	/*background:#ba8249 url(images/bg-accordion-sub-menu.jpg) no-repeat scroll 50% 0;*/
 	background-size:cover;
@@ -1038,8 +1039,8 @@ img.image-center {
 @media only screen and (min-width:1000px) {
 	#accordion-sub-menu {
 		top:50px;
-		padding:25px 50px;
-		font-size:16px;
+		padding:25px 50px 10px;
+		font-size:15px;
 	}
 }
 
@@ -1072,8 +1073,9 @@ img.image-center {
 @media only screen and (min-width:1000px) {
 	#accordion-sub-menu h3 {
 		margin:0 0 10px;
-		background-image:url(images/bg-arrow-3-2.png);
-		font-size:26px;
+		background:none;
+		/*background-image:url(images/bg-arrow-3-2.png);*/
+		font-size:24px;
 	}
 }
 
@@ -1082,22 +1084,19 @@ img.image-center {
 }
 
 #accordion-sub-menu h3 a:hover {
-	color:#fff; text-decoration:underline;
+	color:#fff; text-decoration:none;
 }
 
 #accordion-sub-menu ul {
-	display:none;
 	margin:0 0 25px; padding:0;
 }
 
-@media only screen and (min-width:1000px) {
-	#accordion-sub-menu ul {
-		display:block;
-	}
+#accordion-sub-menu ul ul {
+	display:none;
 }
 
 #accordion-sub-menu ul li {
-	margin:0 0 5px; padding-left:0;
+	margin:0 0 1px; padding-left:0;
 	background:none;
 }
 
@@ -1134,6 +1133,26 @@ img.image-center {
 	#accordion-sub-menu .accordion-heading-active {
 		background-image:url(images/bg-arrow-3-1.png);
 	}
+}
+
+#accordion-sub-menu .nav ul.nav {
+            
+}
+
+@media only screen and (min-width:1000px) {
+	#accordion-sub-menu .nav ul.nav {
+		display: none; /* hide all (inactive) nested lists */  
+	}
+}
+
+#accordion-sub-menu .nav>.active>ul.nav {
+    display: block; /* show active nested list */
+}
+
+#anchor-section-heading-1,
+#anchor-section-heading-2,
+#anchor-section-heading-3 {
+	/* these selectors are to be used as anchors only :: do not style */
 }
 
 .footer-wrapper-outer {

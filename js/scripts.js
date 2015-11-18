@@ -1,6 +1,6 @@
 jQuery(document).ready(
 function($) {
-	
+
 
 // begin main navigation
 $('#mn-toggle-link').click(
@@ -10,9 +10,9 @@ $('#mn-toggle-link').click(
 );
 
 if ( $(window).width() <= 1024 ) {
-	
+
 	var the_mn_window_width = $(window).width();
-	
+
 	$(window).resize(
 		function() {
 			if ( $(this).width() != the_mn_window_width ) {
@@ -38,16 +38,6 @@ $('#main-nav').find('li').each(
 	}
 );
 // end main navigation
-
-
-// begin API accordion menu
-$('#accordion-sub-menu').find('h3').click(
-	function() {
-		$(this).next('ul').stop().slideToggle(500);
-		$(this).toggleClass('accordion-heading-active');
-	}
-);
-// end API accordion menu
 
 
 // begin hiding blue content section under main nav when it is an empty div

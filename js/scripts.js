@@ -24,7 +24,7 @@ if ( $(window).width() <= 1024 ) {
     for (var i in window.apiContentAnchors) {
       var id = window.apiContentAnchors[i].id;
       var divText = '<div id="anchor-section-heading-' + count + '"></div>';
-      $(divText).insertAfter('#' + id);
+      $(divText).insertBefore('#' + id);
       count++;
     }
   }

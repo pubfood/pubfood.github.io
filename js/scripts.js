@@ -18,4 +18,14 @@ if ( $(window).width() <= 1024 ) {
 }
 // end main navigation
 
+  //Set nav content anchors in generated content
+  if (window.apiContentAnchors) {
+    var count = 1;
+    for (var i in window.apiContentAnchors) {
+      var id = window.apiContentAnchors[i].id;
+      var divText = '<div id="anchor-section-heading-' + count + '"></div>';
+      $(divText).insertBefore('#' + id);
+      count++;
+    }
+  }
 }); // end document ready

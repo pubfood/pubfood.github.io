@@ -63,7 +63,7 @@
 <li>
 <h3><a href="#anchor-section-heading-1">Classes</a></h3>
     <ul class="nav nav-pills nav-stacked">
-        <li><a href="#pubfood">pubfood</a></li><li><a href="#pubfood-assembler-TransformOperator">TransformOperator</a></li><li><a href="#pubfood-model-Bid">Bid</a></li><li><a href="#pubfood-model-Slot">Slot</a></li><li><a href="#pubfood-provider-AuctionProvider">AuctionProvider</a></li><li><a href="#pubfood-provider-BidProvider">BidProvider</a></li><li><a href="#PubfoodError">PubfoodError</a></li><li><a href="#PubfoodEvent">PubfoodEvent</a></li>
+        <li><a href="#pubfood">pubfood</a></li><li><a href="#pubfood-assembler-TransformOperator">TransformOperator</a></li><li><a href="#pubfood-model-Bid">Bid</a></li><li><a href="#pubfood-model-Slot">Slot</a></li><li><a href="#pubfood-provider-AuctionProvider">AuctionProvider</a></li><li><a href="#pubfood-provider-BidProvider">BidProvider</a></li><li><a href="#PubfoodError">PubfoodError</a></li><li><a href="#PubfoodEvent">PubfoodEvent</a></li><li><a href="#PubfoodObject">PubfoodObject</a></li>
     </ul>
 </li>
 <li>
@@ -78,7 +78,6 @@
 <div class="content-column-2">
 <section id="class-global-pubfood">
   <a href="#top" class="back-to-top">back to top &#8679;</a>
-
 <header id="pubfood">
 <h2>
         pubfood
@@ -87,13 +86,49 @@
 
 <article>
     <div class="container-overview">
-<h4 class="name foo" id="pubfood"><span class="type-signature"></span>new pubfood<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<h4 class="name foo" id="pubfood"><span class="type-signature"></span>new pubfood<span class="signature">(config<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
 <div class="description">
     Creates a new Pubfood Bidding instance
 </div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>config</code></td>
+<td class="type">
+<span class="param-type"><a href="#typeDefs-PubfoodConfig">PubfoodConfig</a></span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">configuration properties object</td>
+        </tr>
+</tbody>
+</table>
+<dl class="details">
+  <dt class="important tag-deprecated">Deprecated:</dt>
+<dd>
+    <ul class="dummy">
+      <li>pubfood constructor configuration object, see <a href="#typeDefs-PubfoodConfig">PubfoodConfig</a>.</li>
+    </ul>
+  </dd>
+  
+</dl>
+<h5>Example</h5>
+<pre class="prettyprint"><code>new pubfood({randomizeBidRequests: true,
+               bidProviderCbTimeout: 5000,
+               auctionProviderCbTimeout: 5000});</code></pre>
 </div>
 <div class="subsection">
-          <h3 class="subsection-title">Methods (18)</h3>
+          <h3 class="subsection-title">Methods (20)</h3>
 <h4 class="name foo" id="pubfood-addBidProvider"><span class="type-signature"></span>addBidProvider<span class="signature">(delegate)</span><span class="type-signature"> &rarr; {<a href="#pubfood-provider-BidProvider">BidProvider</a>|null}</span></h4>
 <div class="description">
     Add a BidProvider
@@ -193,6 +228,35 @@
 <span class="param-type"><a href="#typeDefs-SlotConfig">SlotConfig</a></span>
 </td>
 <td class="description last">Slot configuration</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-doneCallbackOffset"><span class="type-signature"></span>doneCallbackOffset<span class="signature">(millis)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Sets the default done callback timeout offset. Default: <code>5000ms</code>
+<p>
+If a <a href="#pubfood-provider-BidProvider-timeout">BidProvider.timeout</a> value is not set, specifies the additional time in which a provider gets to push late bids and call <a href="#typeDefs-bidDoneCallback">done()</a>.
+<p>Assists capturing late bid data for analytics and reporting by giving additional timeout "grace" period.
+<p>Bid provider timeout calculated as the following if not otherwise set:
+<li><code>timeout(millis) + doneCallbackOffset(millis)</code></li>
+<p>If the timeout elapses, done() is called on behalf of the provider.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>millis</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">milliseconds to set the timeout</td>
         </tr>
 </tbody>
 </table>
@@ -322,6 +386,45 @@ Returns the <id>:<auction count>
      console.log('my reporter', event.data);
    };
    pf.observe(reporter);</code></pre>
+<h4 class="name foo" id="pubfood-omitDefaultBidKey"><span class="type-signature"></span>omitDefaultBidKey<span class="signature">(defaultBidKeyOff)</span><span class="type-signature"> &rarr; {<a href="#pubfood">pubfood</a>}</span></h4>
+<div class="description">
+    Omit the bid provider default key/value being sent to the ad server.
+<p>
+Pubfood will add the bid provider default key/value to the ad server
+request unless omitted explicitly. Default key of the form: <code>&lt;name&gt;_&lt;label|bid&gt;=&lt;value&gt;</code>
+<p>
+If the default bid provider key/value is omitted, all ad server targeting
+is dependent on the <a href="#typeDefs-TargetingObject">TargetingObject.targeting</a> property.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>defaultBidKeyOff</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="description last">true turns the default bid key/value feature off.</td>
+        </tr>
+</tbody>
+</table>
+<h5>Example</h5>
+<pre class="prettyprint"><code>pubfood.omitDefaultBidKey(true)
+
+e.g. for the bid provider name: 'foo', prevents the 'foo_bid=' parameters shown below
+
+prev_iu_szs:300x250|300x600,728x90
+prev_scp:foo_bid=400|foo_bid=200
+
+where;
+&lt;bidder>_&lt;label|bid>=&lt;value></code></pre>
 <h4 class="name foo" id="pubfood-pushApiCall_"><span class="type-signature"></span>pushApiCall_<span class="signature">(name, args)</span><span class="type-signature"></span></h4>
 <div class="description">
     Push a call to the pubfood api for logging history.
@@ -567,7 +670,7 @@ Default name: OP-[uniqueID] e.g. OP-ih47iucugqzlerdpbr
 
 <article>
     <div class="container-overview">
-<h4 class="name foo" id="pubfood-model-Bid"><span class="type-signature"></span>new Bid<span class="signature">(slot, value, sizes)</span><span class="type-signature"></span></h4>
+<h4 class="name foo" id="pubfood-model-Bid"><span class="type-signature"></span>new Bid<span class="signature">(value)</span><span class="type-signature"></span></h4>
 <div class="description">
     Bid is the result of a partner BidProvider request.
 </div>
@@ -582,13 +685,6 @@ Default name: OP-[uniqueID] e.g. OP-ih47iucugqzlerdpbr
     </thead>
 <tbody>
 <tr>
-<td class="name"><code>slot</code></td>
-<td class="type">
-<span class="param-type">string</span>
-</td>
-<td class="description last">the slot name</td>
-        </tr>
-<tr>
 <td class="name"><code>value</code></td>
 <td class="type">
 <span class="param-type">string</span>
@@ -598,18 +694,11 @@ Default name: OP-[uniqueID] e.g. OP-ih47iucugqzlerdpbr
 </td>
 <td class="description last">the bid value. Default: empty string.</td>
         </tr>
-<tr>
-<td class="name"><code>sizes</code></td>
-<td class="type">
-<span class="param-type">Array.&lt;number, number&gt;</span>
-</td>
-<td class="description last">the dimension sizes of the slot bid</td>
-        </tr>
 </tbody>
 </table>
 </div>
 <div class="subsection">
-          <h3 class="subsection-title">Members (3)</h3>
+          <h3 class="subsection-title">Members (7)</h3>
 <div class="members">
   <h4 class="name" id="pubfood-model-Bid-label"><span class="type-signature"></span>label<span class="type-signature"></span></h4>
 <h5 class="subsection-title">Properties:</h5>
@@ -663,6 +752,84 @@ Default name: OP-[uniqueID] e.g. OP-ih47iucugqzlerdpbr
 </table>
 </div>
 <div class="members">
+  <h4 class="name" id="pubfood-model-Bid-sizes"><span class="type-signature"></span>sizes<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>sizes</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;number, number&gt;</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">the dimension sizes of the slot bid</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="pubfood-model-Bid-slot"><span class="type-signature"></span>slot<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>slot</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">the slot name</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="pubfood-model-Bid-targeting"><span class="type-signature"></span>targeting<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>targeting</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">ad server targeting key/values in addition to the bid value</td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
   <h4 class="name" id="pubfood-model-Bid-type"><span class="type-signature"></span>type<span class="type-signature"></span></h4>
 <h5 class="subsection-title">Properties:</h5>
 <table class="props">
@@ -679,7 +846,32 @@ Default name: OP-[uniqueID] e.g. OP-ih47iucugqzlerdpbr
 <td class="type">
 <span class="param-type">string</span>
 </td>
-<td class="description last">bid value type derived from <a href="#util-asType">util.asType</a></td>
+<td class="description last">derived bid value type: from <a href="#util-asType">util.asType</a></td>
+        </tr>
+</tbody>
+</table>
+</div>
+<div class="members">
+  <h4 class="name" id="pubfood-model-Bid-value"><span class="type-signature"></span>value<span class="type-signature"></span></h4>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>value</code></td>
+<td class="type">
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+</td>
+<td class="description last">the bid value. Default: empty string</td>
         </tr>
 </tbody>
 </table>
@@ -753,7 +945,7 @@ Default name: OP-[uniqueID] e.g. OP-ih47iucugqzlerdpbr
 
 <span class="param-type">number</span>
 </td>
-<td class="description last"></td>
+<td class="description last">the bid value for the ad server key/value targeting</td>
         </tr>
 </tbody>
 </table>
@@ -1253,7 +1445,7 @@ The AuctionProvider delegate Javascript and other tag setup is done here.
     </ul>
 </div>
 <div class="subsection">
-          <h3 class="subsection-title">Methods (8)</h3>
+          <h3 class="subsection-title">Methods (10)</h3>
 <h4 class="name foo" id="pubfood-provider-BidProvider-enabled"><span class="type-signature"></span>enabled<span class="signature">(status<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 <div class="description">
     Get or set the bid provider enabled status.
@@ -1332,6 +1524,10 @@ the bid provider may be disabled to prevent the provider bid request.
     </ul>
   </dd>
 </dl>
+<h4 class="name foo" id="pubfood-provider-BidProvider-getTimeout"><span class="type-signature"></span>getTimeout<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span></h4>
+<div class="description">
+    Get the timeout by which a bid provider must call done
+</div>
 <h4 class="name foo" id="pubfood-provider-BidProvider-init"><span class="type-signature"></span>init<span class="signature">(slots, pushBid, done)</span><span class="type-signature"></span></h4>
 <div class="description">
     Initialize a bid provider.
@@ -1503,6 +1699,29 @@ Delegates to implementation BidDelegate.init
 &lt;optional><br>
 </td>
 <td class="description last">when true load the library in a sync fashion</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="pubfood-provider-BidProvider-timeout"><span class="type-signature"></span>timeout<span class="signature">(millis)</span><span class="type-signature"></span></h4>
+<div class="description">
+    Set the timeout by which a bid provider must call done
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>millis</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="description last">the millisecond duration the bid provider has to push bids</td>
         </tr>
 </tbody>
 </table>
@@ -2326,6 +2545,7 @@ The start callback must be invoked to start the auction.
 <span class="param-type">string</span>
 </td>
 <td class="attributes">
+&lt;optional><br>
 </td>
 <td class="description last">location of the delegate JavaScript library/tag.</td>
         </tr>
@@ -2525,6 +2745,64 @@ The start callback must be invoked to start the auction.
         </tr>
 </tbody>
 </table>
+</div>
+<div class="members">
+  <h4 class="name" id="typeDefs-PubfoodConfig">PubfoodConfig</h4>
+<div class="description">
+      <a href="#pubfood">pubfood</a> constructor configuration
+  </div>
+<h5 class="subsection-title">Properties:</h5>
+<table class="props">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th>Attributes</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>auctionProviderCbTimeout</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">The maximum time the auction provider has before calling <a href="#typeDefs-auctionDoneCallback">done()</a> inside the <a href="#pubfood-provider-AuctionProvider-init">AuctionProvider.init</a> or <a href="#pubfood-provider-AuctionProvider-refresh">AuctionProvider.refresh</a> methods</td>
+        </tr>
+<tr>
+<td class="name"><code>bidProviderCbTimeout</code></td>
+<td class="type">
+<span class="param-type">number</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">The maximum time the bid provider has before calling <a href="#typeDefs-bidDoneCallback">done()</a> inside the <a href="#pubfood-provider-BidProvider-init">BidProvider.init</a> or <a href="#pubfood-provider-BidProvider-refresh">BidProvider.refresh</a> methods</td>
+        </tr>
+<tr>
+<td class="name"><code>randomizeBidRequests</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last">Randomize the order in which <a href="#pubfood-provider-BidProvider">BidProvider</a> requests are made. Default: false.</td>
+        </tr>
+</tbody>
+</table>
+<dl class="details">
+  <dt class="important tag-deprecated">Deprecated:</dt>
+<dd>
+    <ul class="dummy">
+      <li>the PubfoodConfig configuration object will be replaced in a future major release. <a href="#pubfood">pubfood</a> methods for configuraion properties will be available.</li>
+    </ul>
+  </dd>
+  
+</dl>
 </div>
 <h4 class="name foo" id="typeDefs-pushBidCallback"><span class="type-signature"></span>pushBidCallback<span class="signature">(bid)</span><span class="type-signature"></span></h4>
 <div class="description">
@@ -2804,6 +3082,100 @@ This is the callback passed into the AuctionTriggerFn.
 </div>
 </article>
 
+</section>
+<section id="namespace-global-util">
+  <a href="#top" class="back-to-top">back to top &#8679;</a>
+
+<header id="util">
+<h2>
+        util
+        </h2>
+</header>
+
+<article>
+    <div class="container-overview">
+</div>
+<div class="subsection">
+          <h3 class="subsection-title">Methods (3)</h3>
+<h4 class="name foo" id="util-asType"><span class="type-signature">(static) </span>asType<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+<div class="description">
+    Get the type name of an object.
+For behavior,
+</div>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="https://javascriptweblog.wordpress.com/2011/08/08/fixing-the-javascript-typeof-operator/">https://javascriptweblog.wordpress.com/2011/08/08/fixing-the-javascript-typeof-operator/</a></li>
+        </ul>
+    </dd>
+  </dl>
+<h4 class="name foo" id="util-mergeToObject"><span class="type-signature">(static) </span>mergeToObject<span class="signature">(target, source)</span><span class="type-signature"> &rarr; {object}</span></h4>
+<div class="description">
+    Merge two objects.
+Where source and target share the same keys, source overwrites target key.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>target</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">the target object</td>
+        </tr>
+<tr>
+<td class="name"><code>source</code></td>
+<td class="type">
+<span class="param-type">object</span>
+</td>
+<td class="description last">the source object</td>
+        </tr>
+</tbody>
+</table>
+<h4 class="name foo" id="util-randomize"><span class="type-signature">(static) </span>randomize<span class="signature">(array)</span><span class="type-signature"> &rarr; {array}</span></h4>
+<div class="description">
+    Randomize the position of items in an array. The original array will be
+both changed in place and returned. The algorithm implemented here is a
+Fisher–Yates Shuffle which is unbiased.
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+    <thead>
+    <tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+    </tr>
+    </thead>
+<tbody>
+<tr>
+<td class="name"><code>array</code></td>
+<td class="type">
+<span class="param-type">array</span>
+</td>
+<td class="description last">that should be permuted in place and returned.</td>
+        </tr>
+</tbody>
+</table>
+<dl class="details">
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+      <ul>
+        <li><a href="http://bost.ocks.org/mike/shuffle/">http://bost.ocks.org/mike/shuffle/</a></li>
+        </ul>
+    </dd>
+  </dl>
+</div>
+</article>
 </section>
 </div><!-- end .content-column-2 -->
 <div style="clear:both"></div>

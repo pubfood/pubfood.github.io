@@ -41,6 +41,11 @@ li {
 
 }
 
+.content-section {
+	max-width:1200px;
+	margin:0 auto; padding:0 0 40px;
+}
+
 .content {
 	line-height:1.7;
 	font-size:16px;
@@ -311,6 +316,37 @@ li {
 	margin-bottom:0;
 }
 
+.content .styled-heading-a {
+	margin:0 0 20px;
+	line-height:1.4;
+	font-size:26px; font-weight:normal;
+	color:#ba8249;
+}
+
+@media only screen and (min-width:569px) {
+	.content .styled-heading-a {
+		margin:0 0 25px;
+		line-height:1.4;
+		font-size:37px;
+	}
+}
+
+@media only screen and (min-width:900px) {
+	.content .styled-heading-a {
+		margin:0 0 40px;
+		line-height:1.2;
+		font-size:50px;
+	}
+}
+
+@media only screen and (min-width:1200px) {
+	.content .styled-heading-a {
+		margin:0 0 50px;
+		line-height:1.2;
+		font-size:60px;
+	}
+}
+
 a.button-1 {
 	display:inline-block;
 	margin:25px 0; padding:6px 18px;
@@ -344,6 +380,21 @@ p a.button-1 {
 a.button-1:hover {
 	color:#00374f; text-decoration:none;
 	background:#fff;
+}
+
+.testimonial-signature {
+	color:#ba8249;
+}
+
+@media only screen and (min-width:768px) {
+	.testimonial-signature {
+		text-align:right;
+	}	
+}
+
+hr.styled-hr-1 {
+	padding:0; margin:30px 0;
+	border-top:2px solid #debd9c;
 }
 
 .content-column-1 {
@@ -636,6 +687,14 @@ img.image-center {
 
 .text-color-1 {
 	color:#1d1d1d;
+}
+
+.text-color-2 {
+	color:#ba8249;
+}
+
+.text-color-3 {
+	color:#00374f;
 }
 
 .divider-h {
@@ -1025,6 +1084,31 @@ img.image-center {
 #section-api-1 {
 	max-width:1200px;
 	margin:0 auto; padding:0;
+}
+
+#section-testimonials-1 {
+	margin:0 auto; padding:0;
+}
+
+@media only screen and (min-width:768px) {
+	#section-testimonials-1 {
+		max-width:1200px;
+		margin:0 auto 20px; padding:0;
+	}	
+}
+
+.st1-logos-wrapper {
+	max-width:1000px;
+	padding:20px 20px 5px; margin:0 auto;
+	text-align:center;
+}
+
+.st1-logos-wrapper span {
+	box-sizing:border-box;
+	display:inline-block;
+	width:100%; max-width:250px; 
+	padding:0 20px 20px;
+	vertical-align:middle;
 }
 
 #accordion-sub-menu {
@@ -1507,23 +1591,23 @@ body.home .f-logo-2 {
 
 @media only screen and (min-width:1000px) {
 	#main-nav li a {
-		padding:0; margin:0 0 0 32px;
+		padding:0; margin:0 0 0 20px;
 		line-height:1;
-		font-size:16px; font-weight:bold;
+		font-size:14px; font-weight:bold;
 	}
 }
 
 @media only screen and (min-width:1100px) {
 	#main-nav li a {
-		padding:0; margin:0 0 0 35px;
-		font-size:18px;
+		padding:0; margin:0 0 0 18px;
+		font-size:16px;
 	}
 }
 
 @media only screen and (min-width:1200px) {
 	#main-nav li a {
-		padding:0; margin:0 0 0 45px;
-		font-size:19px;
+		padding:0; margin:0 0 0 17px;
+		font-size:18px;
 	}
 }
 

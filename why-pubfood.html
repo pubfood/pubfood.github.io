@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Integration Playbook | Pubfood</title>
+<title>Why Pubfood | Pubfood</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -12,7 +12,7 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body class="page-why-pubfood" data-spy="scroll" data-target="#why-pubfood-sub-menu">
 <!-- begin header -->
 <div class="top-wrapper-outer">
 <div id="top-wrapper">
@@ -23,11 +23,11 @@
 <div id="main-nav">
 <ul>
 <li><a href="/getting-started">Quick Start</a></li>
-<li><a href="/why-pubfood">Why Pubfood</a></li>
+<li><a class="mn-link-active" href="/why-pubfood">Why Pubfood</a></li>
 <li><a href="/analytics">Pubfood Analytics</a></li>
 <li><a href="/api-reference">API Reference</a></li>
 <li><a href="/testimonials">Testimonials</a></li>
-<li><a class="mn-link-active" href="/integration-playbook">Ad Ops Guide</a></li>
+<li><a href="/integration-playbook">Ad Ops Guide</a></li>
 <li><a href="https://github.com/pubfood/pubfood" target="_blank">GitHub</a></li>
 <li><a href="mailto:pubfood@yieldbot.com?subject=Invite%20Request:%20Pubfood.js%20Slack%20Channel">Contact</a></li>
 </ul>
@@ -39,62 +39,79 @@
 </div><!-- end .top-wrapper-outer -->
 <!-- end header -->
 
-<div id="section-ip-1" class="content">
+<div class="content-section content">
 <!-- begin section connector :: needed to complete header -->
 <div class="section-connector-1"><img src="images/half-circle-1.png" width="120" height="35" alt="half circle" /></div>
 <!-- end section connector :: needed to complete header -->
 <div class="container-fluid">
 <div class="row">
-<div class="col-xs-12">
-<h3>Configuring your Ad Server</h3>
-<p>Each header bidding partner likely has respective key-value pairs that are required for integration. Make sure to get these details directly from the partner, but the general steps below should cover the overall process.</p>
-<h4>Define Custom Keys</h4>
-<p>In DFP's Inventory Tab, create the (free-form) custom keys for all of the header bidder partners that you are integrating through Pubfood.js.</p>
+<div class="col-sm-8">
+<h2>The Header Bidding Evolution</h2>
+<p>For years, publishers were at the mercy of the waterfall. When partners couldn't deliver an impression, the next partner in line would get their turn to serve. This meant a lower CPM and more latency for you. A death trap for publishers.</p>
+<p>Header bidding interrupted the space with a first look at inventory to drive up your revenue and stop publisher from throwing ad dollars into a black box ad server.</p>
+<p>The header bidder grabs a bid from its own server and returns with a bid before your ad server fires. When your ad server does fire, the bid is injected into the auction so that it may participate with other partners, direct sales, and programmatic.</p>
+</div>
+<div class="col-sm-4">
+<div id="why-pubfood-sub-menu" data-spy="affix" data-offset-top="275">
+<h4>Additional Header Bidding Resources</h4>
+<ul>
+<li><a href="https://www.admonsters.com/blog/admonsters-playbook-header-bidding" target="_blank">AdMonsters Header Bidding Playbook</a></li>
+<li><a href="http://bit.ly/1O57lLg" target="_blank">Head to Toe on Header Bidding Webinar</a></li>
+<li><a href="https://www.yieldbot.com/blog/the-open-v-closed-header-bidding-debate/" target="_blank">The Open vs. Closed Header Bidding Debate</a></li>
+<li><a href="http://www.adopsinsider.com/header-bidding/guide-header-bidding-wrappers/" target="_blank">Guide to Header Bidding Wrappers</a></li>
+<li><a href="http://digiday.com/publishers/header-bidding-publishers-boosting-cpms-much-50-percent/" target="_blank">With header bidding, publishers are boosting CPMs by as much as 50 percent</a></li>
+</ul>
+</div><!-- end #why-pubfood-sub-menu -->
 </div>
 </div><!-- end .row -->
 </div><!-- end .container-fluid -->
-</div><!-- end #section-ip-1 -->
+</div><!-- end .content-section -->
 
-<div id="section-ip-2" class="content">
+<div class="section-why-pubfood-1-outer">
+<div id="section-why-pubfood-1" class="text-color-4 content-section content">
 <div class="container-fluid">
 <div class="row">
-<div class="col-xs-12">
-<h4>Line Item Setup</h4>
-<ul>
-<li>Create orders for each of the header bidders that you're integrating into Pubfood.js.</li>
-<li>Within each order, you'll need to create line items for the different prices for each ad slot.</li>
-<li>Depending on the header partner, the increments can be as granular as $0.10, or $0.01.</li>
-</ul>
+<div class="col-md-8">
+<h2 style="color:#fff; text-align:center;">The Pubfood Advantage</h2>
+</div>
+<div class="col-md-4">
 </div>
 </div><!-- end .row -->
-</div><!-- end .container-fluid -->
-</div><!-- end #section-ip-2 -->
-
-<div id="section-ip-3" class="content">
-<div class="container-fluid">
 <div class="row">
-<div class="col-xs-12">
-<h4>Line Item Settings</h4>
+<div class="col-md-8">
+<div class="row">
+<div class="col-sm-6">
+<div class="swp1-col-1">
+<h4 style="color:#fff; text-align:center;">Publisher Challenges</h4>
 <ul>
-<li>All header bidder partners should be set up with a line item type Price Priority. That way, it's a true auction and the partner with the highest bid will win the impressions.</li>
-<li>Set the impression goal as none and the end date as unlimited.</li>
-<li>Set a CPM value for each line item that corresponds with the price that will be used in the line item targeting.</li>
-<li>Alternatively, publishers can still use waterfalls to manage auctions more granularly. Ensure that the correct KVPs are targeted for the bid values, and manage to your desired waterfall settings as appropriate.</li>
+<li>Ever present struggle between latency and revenue balance, and what timeout to set</li>
+<li>&quot;Heavy iron&quot; header bidder integrations render quick tests impossible</li>
+<li>Sync blocking JS calls from multiple header bidders</li>
+<li>Header bidding code requires ongoing maintenance</li>
+<li>Header bidder code scattered within publisher framework, sometimes with multiple timeouts per bidder</li>
 </ul>
-
-<h4>Line Item Targeting</h4>
+</div><!-- end .swp1-col-1 -->
+</div>
+<div class="col-sm-6">
+<div class="swp1-col-2">
+<h4 style="color:#fff; text-align:center;">Pubfood Solutions</h4>
 <ul>
-<li>Target the line items to the correct DFP ad units.</li>
-<li>Use the header bidder partners custom key and add in the targeting value that will be passed into the ad server by Pubfood.js for that specific line item.<br />
-<br />
-Example: ybot is MR:300x600:300</li>
+<li>Achieve optimal setup by tapping into the Yieldbot engineering team</li>
+<li>Get header bidders up in 72 hours!</li>
+<li>Load header bidders async and set an appropriate timeout</li>
+<li>Yieldbot support available to make tweaks</li>
+<li>Pubfood organizes header bidder code into one succinct library under one timeout</li>
 </ul>
-
-<p class="text-color-1" style="text-align:center">Notes: Individual bidder vendors may have an API tool to automate line item creation.</p>
+</div><!-- end .swp1-col-2 -->
+</div>
+</div><!-- end .row -->
+</div>
+<div class="col-md-4">
 </div>
 </div><!-- end .row -->
 </div><!-- end .container-fluid -->
-</div><!-- end #section-ip-3 -->
+</div><!-- end #section-why-pubfood-1 -->
+</div><!-- end .section-why-pubfood-1-outer -->
 
 <!-- begin footer -->
 <div class="footer-wrapper-outer">

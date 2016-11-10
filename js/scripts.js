@@ -23,6 +23,7 @@ if ( $(window).width() <= 1024 ) {
     var count = 1;
     for (var i in window.apiContentAnchors) {
       var id = window.apiContentAnchors[i].id;
+      id = id.replace(/([^\a-z]+)/gi, '-');
       var divText = '<div id="anchor-section-heading-' + count + '"></div>';
       $(divText).insertBefore('#' + id);
       count++;
